@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Freelance GDPR Data Subject Request (DSAR) Processor - Manage and automate DSAR workflows securely.">
+    <title>GDPR DSAR Processor | Home</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    
+    <!-- Font Awesome / Remix Icons placeholder -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="ri-shield-keyhole-fill"></i> DSARPro
+            </a>
+            
+            <button class="mobile-toggle"><i class="ri-menu-3-line"></i></button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">Home 1</a></li>
+                <li><a href="home-2.html" class="nav-item">Home 2</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="pricing.html" class="nav-item">Pricing</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                
+                <!-- Navbar Actions for Mobile included in menu -->
+                <div class="nav-actions">
+                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL">
+                        <i class="ri-translate-2"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section" style="padding-top: 150px; background: var(--bg-secondary); overflow: hidden;">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+            <div class="hero-content reveal" style="flex: 1; min-width: 300px;">
+                <h1 style="color: var(--primary);">Automate GDPR Data Subject Requests</h1>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Streamline your DSAR workflows, ensure privacy compliance, and protect customer data with our secure automation platform.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="services.html" class="btn btn-primary">Discover Features</a>
+                    <a href="contact.html" class="btn btn-outline">Request Demo</a>
+                </div>
+            </div>
+            <div class="hero-image reveal" style="flex: 1; min-width: 300px; position: relative;">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="GDPR Dashboard Mockup" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                <div style="position: absolute; bottom: -20px; left: -20px; background: var(--card-bg); padding: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 1rem;">
+                    <i class="ri-shield-check-fill" style="font-size: 2rem; color: var(--secondary);"></i>
+                    <div>
+                        <h4 style="margin: 0;">100% Secure</h4>
+                        <p style="margin: 0; font-size: 0.8rem;">End-to-End Encrypted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Trusted Companies / Clients Section -->
+    <section class="clients-section reveal" style="padding: 4rem 0; border-bottom: 1px solid var(--border-color);">
+        <div class="container text-center">
+            <h5 style="color: var(--text-muted); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Trusted by Privacy-First Companies</h5>
+            <div class="grid-4">
+                <div class="client-logo" style="padding: 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); transition: var(--transition); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; height: 100px;">
+                    <h3 style="margin:0; color: var(--text-muted);">TechCorp</h3>
+                </div>
+                <div class="client-logo" style="padding: 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); transition: var(--transition); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; height: 100px;">
+                    <h3 style="margin:0; color: var(--text-muted);">SecureNet</h3>
+                </div>
+                <div class="client-logo" style="padding: 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); transition: var(--transition); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; height: 100px;">
+                    <h3 style="margin:0; color: var(--text-muted);">FinData</h3>
+                </div>
+                <div class="client-logo" style="padding: 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); transition: var(--transition); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; height: 100px;">
+                    <h3 style="margin:0; color: var(--text-muted);">HealthSync</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DSAR Workflow Process Section -->
+    <section class="process-section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Streamlined DSAR Workflow</h2>
+                <p>Manage data subject requests from submission to resolution in four simple steps.</p>
+            </div>
+            <div class="grid-4 relative" style="position: relative;">
+                <!-- Step 1 -->
+                <div class="card text-center" style="position: relative; z-index: 1;">
+                    <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; font-weight: bold;">1</div>
+                    <h4>Request Intake</h4>
+                    <p>Secure portal for users to submit requests efficiently.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="card text-center" style="position: relative; z-index: 1;">
+                    <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; font-weight: bold;">2</div>
+                    <h4>Identity Verification</h4>
+                    <p>Automated verification to prevent unauthorized access.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="card text-center" style="position: relative; z-index: 1;">
+                    <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; font-weight: bold;">3</div>
+                    <h4>Data Discovery</h4>
+                    <p>AI scans systems to map personal data securely.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="card text-center" style="position: relative; z-index: 1;">
+                    <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; font-weight: bold;">4</div>
+                    <h4>Redaction & Delivery</h4>
+                    <p>Deliver encrypted reports back to the data subject.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Features Section -->
+    <section class="features-section reveal" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Powerful Platform Features</h2>
+                <p>Everything you need to maintain GDPR compliance at scale.</p>
+            </div>
+            <div class="grid-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600" alt="Data Mapping">
+                    </div>
+                    <div class="card-content">
+                        <h4>Data Mapping</h4>
+                        <p>Automatically discover and categorize PII across all your databases and third-party tools.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1614064641913-a5118c72957e?auto=format&fit=crop&q=80&w=600" alt="Secure Redaction">
+                    </div>
+                    <div class="card-content">
+                        <h4>Secure Redaction</h4>
+                        <p>Intelligent redaction of sensitive data to protect employee and proprietary information.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Audit Logs">
+                    </div>
+                    <div class="card-content">
+                        <h4>Comprehensive Audits</h4>
+                        <p>Maintain immutable audit trails for every action taken to demonstrate compliance.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=600" alt="Automated Deletion">
+                    </div>
+                    <div class="card-content">
+                        <h4>Automated Deletion</h4>
+                        <p>Execute 'Right to be Forgotten' requests securely across integrated systems.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Secure Automation Section -->
+    <section class="secure-automation reveal" style="background: #0b1121; color: #fff;">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
+            <div style="flex: 1; min-width: 300px;">
+                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800" alt="Cybersecurity Server" style="border-radius: var(--radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="color: #fff; margin-bottom: 1.5rem;">Enterprise-Grade Security Architecture</h2>
+                <p style="color: #9ca3af; margin-bottom: 2rem;">Our platform is built with privacy-by-design principles, ensuring your sensitive DSAR operations are protected against modern cyber threats.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                    <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: #f3f4f6;">
+                        <i class="ri-checkbox-circle-fill" style="color: var(--secondary); font-size: 1.2rem;"></i> AES-256 Encryption at Rest & Transit
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: #f3f4f6;">
+                        <i class="ri-checkbox-circle-fill" style="color: var(--secondary); font-size: 1.2rem;"></i> ISO 27001 Certified Data Centers
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: #f3f4f6;">
+                        <i class="ri-checkbox-circle-fill" style="color: var(--secondary); font-size: 1.2rem;"></i> Role-Based Access Controls (RBAC)
+                    </li>
+                </ul>
+                <a href="about.html" class="btn btn-primary">Read Security Paper</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonials Section -->
+    <section class="testimonials-section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Privacy Officers Say</h2>
+                <p>Join hundreds of organizations simplifying compliance.</p>
+            </div>
+            <div class="grid-4">
+                <div class="card" style="background: var(--gradient-primary); color: #fff;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"><i class="ri-double-quotes-l"></i></div>
+                    <p style="color: #fff; font-style: italic; margin-bottom: 1.5rem; flex-grow: 1;">"DSARPro cut our request processing time by 80%. The automated data mapping is unparalleled."</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">JD</div>
+                        <div>
+                            <h5 style="margin: 0; color: #fff;">John Doe</h5>
+                            <span style="font-size: 0.8rem; opacity: 0.8;">CISO, TechCorp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="background: var(--gradient-primary); color: #fff;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"><i class="ri-double-quotes-l"></i></div>
+                    <p style="color: #fff; font-style: italic; margin-bottom: 1.5rem; flex-grow: 1;">"The secure redaction feature alone is worth the investment. It's transformed our workflow."</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">SM</div>
+                        <div>
+                            <h5 style="margin: 0; color: #fff;">Sarah Mayer</h5>
+                            <span style="font-size: 0.8rem; opacity: 0.8;">DPO, FinData</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="background: var(--gradient-primary); color: #fff;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"><i class="ri-double-quotes-l"></i></div>
+                    <p style="color: #fff; font-style: italic; margin-bottom: 1.5rem; flex-grow: 1;">"Finally, a tool that understands the complexities of GDPR. Highly recommended for enterprise."</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">RW</div>
+                        <div>
+                            <h5 style="margin: 0; color: #fff;">Robert Wong</h5>
+                            <span style="font-size: 0.8rem; opacity: 0.8;">Legal Counsel, HealthSync</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="background: var(--gradient-primary); color: #fff;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"><i class="ri-double-quotes-l"></i></div>
+                    <p style="color: #fff; font-style: italic; margin-bottom: 1.5rem; flex-grow: 1;">"Implementation was seamless, and the support team is outstanding. Five stars."</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">EL</div>
+                        <div>
+                            <h5 style="margin: 0; color: #fff;">Emma Lewis</h5>
+                            <span style="font-size: 0.8rem; opacity: 0.8;">Compliance Dir., SecureNet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem; display: inline-flex;">
+                        <i class="ri-shield-keyhole-fill"></i> DSARPro
+                    </a>
+                    <p>Automating data privacy and GDPR compliance for modern businesses. Protecting user data, one request at a time.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Legal & Privacy</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for privacy updates.</p>
+                    <form action="#" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" required style="padding: 0.6rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.6rem;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DSARPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

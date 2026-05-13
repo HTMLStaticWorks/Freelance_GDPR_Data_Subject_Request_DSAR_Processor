@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DSARPro Blog - Privacy news and insights.">
+    <title>Blog | DSARPro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="ri-shield-keyhole-fill"></i> DSARPro
+            </a>
+            <button class="mobile-toggle"><i class="ri-menu-3-line"></i></button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">Home 1</a></li>
+                <li><a href="home-2.html" class="nav-item">Home 2</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="pricing.html" class="nav-item">Pricing</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <div class="nav-actions">
+                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
+                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-translate-2"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. Hero -->
+    <section class="page-hero" style="padding: 150px 0 80px; background: var(--bg-secondary); text-align: center;">
+        <div class="container reveal">
+            <h1 style="color: var(--primary);">Privacy Insights</h1>
+            <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Latest news, guides, and insights on GDPR, data protection, and compliance technology.</p>
+        </div>
+    </section>
+
+    <!-- 2. Featured Article -->
+    <section class="reveal">
+        <div class="container">
+            <div style="background: var(--card-bg); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); display: flex; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1516322073387-8fb86efcb9ce?auto=format&fit=crop&q=80&w=800" alt="Featured Post" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 1; min-width: 300px; padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: inline-block;">Compliance Guide</span>
+                    <h2 style="margin-bottom: 1.5rem;">How to Prepare for the New EU AI Act Requirements</h2>
+                    <p style="margin-bottom: 2rem;">The EU AI Act introduces strict new rules for artificial intelligence systems. Learn how it intersects with GDPR and what privacy teams need to do now.</p>
+                    <div>
+                        <a href="blog-details.html" class="btn btn-primary">Read Full Article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Blog Grid (4 cards only) -->
+    <section class="reveal" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Articles</h2>
+            </div>
+            <div class="grid-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Blog 1">
+                    </div>
+                    <div class="card-content">
+                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; display: block;">Oct 12, 2025</span>
+                        <h4 style="margin-bottom: 1rem;"><a href="blog-details.html">The Real Cost of Manual DSAR Processing</a></h4>
+                        <p>An analysis of the hidden financial and operational costs of not automating your data requests.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="blog-details.html" style="color: var(--primary); font-weight: 600;">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1614064641913-a5118c72957e?auto=format&fit=crop&q=80&w=600" alt="Blog 2">
+                    </div>
+                    <div class="card-content">
+                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; display: block;">Oct 05, 2025</span>
+                        <h4 style="margin-bottom: 1rem;"><a href="blog-details.html">Navigating Cross-Border Data Transfers</a></h4>
+                        <p>Understanding standard contractual clauses and the latest guidance from the EDPB.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="blog-details.html" style="color: var(--primary); font-weight: 600;">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=600" alt="Blog 3">
+                    </div>
+                    <div class="card-content">
+                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; display: block;">Sep 28, 2025</span>
+                        <h4 style="margin-bottom: 1rem;"><a href="blog-details.html">Why Data Discovery is the Foundation of Privacy</a></h4>
+                        <p>You can't protect what you can't see. Learn why automated mapping is critical.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="blog-details.html" style="color: var(--primary); font-weight: 600;">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=600" alt="Blog 4">
+                    </div>
+                    <div class="card-content">
+                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; display: block;">Sep 15, 2025</span>
+                        <h4 style="margin-bottom: 1rem;"><a href="blog-details.html">Ransomware & GDPR: The Double Threat</a></h4>
+                        <p>How a security breach triggers strict notification timelines under GDPR.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="blog-details.html" style="color: var(--primary); font-weight: 600;">Read More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Categories & Tags -->
+    <section class="reveal">
+        <div class="container text-center">
+            <h3 style="margin-bottom: 2rem;">Explore Topics</h3>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                <a href="#" class="btn btn-outline" style="border-radius: 30px;">GDPR</a>
+                <a href="#" class="btn btn-outline" style="border-radius: 30px;">CCPA</a>
+                <a href="#" class="btn btn-outline" style="border-radius: 30px;">Automation</a>
+                <a href="#" class="btn btn-outline" style="border-radius: 30px;">Cybersecurity</a>
+                <a href="#" class="btn btn-outline" style="border-radius: 30px;">Data Mapping</a>
+                <a href="#" class="btn btn-outline" style="border-radius: 30px;">Legal Updates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Newsletter CTA -->
+    <section class="reveal" style="background: var(--gradient-primary); color: #fff; padding: 6rem 0;">
+        <div class="container text-center">
+            <i class="ri-mail-send-line" style="font-size: 4rem; margin-bottom: 1rem; display: inline-block; color: rgba(255,255,255,0.8);"></i>
+            <h2 style="color: #fff; margin-bottom: 1rem;">Subscribe to Our Privacy Newsletter</h2>
+            <p style="color: rgba(255,255,255,0.9); max-width: 500px; margin: 0 auto 2rem;">Get the latest regulatory updates and technical insights delivered directly to your inbox weekly.</p>
+            <form style="display: flex; justify-content: center; gap: 1rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+                <input type="email" placeholder="Your work email" style="padding: 1rem; border: none; border-radius: 8px; flex: 1; min-width: 250px; outline: none;">
+                <button type="submit" class="btn" style="background: #111827; color: #fff;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem; display: inline-flex;">
+                        <i class="ri-shield-keyhole-fill"></i> DSARPro
+                    </a>
+                    <p>Automating data privacy and GDPR compliance for modern businesses. Protecting user data, one request at a time.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Legal & Privacy</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for privacy updates.</p>
+                    <form action="#" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" required style="padding: 0.6rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.6rem;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DSARPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

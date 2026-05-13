@@ -1,0 +1,36 @@
+/* RTL Support */
+[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .nav-brand {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-menu {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-links a:hover {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+[dir="rtl"] .section-title {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    [dir="rtl"] .nav-menu {
+        left: auto;
+        right: -100%;
+    }
+    [dir="rtl"] .nav-menu.active {
+        right: 0;
+    }
+}

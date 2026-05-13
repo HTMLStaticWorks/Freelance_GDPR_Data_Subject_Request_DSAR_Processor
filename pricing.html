@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DSARPro Pricing Plans.">
+    <title>Pricing | DSARPro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+        @media (max-width: 1024px) {
+            .pricing-card.popular { transform: none; }
+        }
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+        }
+        .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+        .pricing-features {
+            margin: 2rem 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+        .pricing-features li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        .pricing-features i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        /* Toggle Switch */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0 4rem;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--primary-light);
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--primary); }
+        input:checked + .slider:before { transform: translateX(26px); }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="ri-shield-keyhole-fill"></i> DSARPro
+            </a>
+            <button class="mobile-toggle"><i class="ri-menu-3-line"></i></button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">Home 1</a></li>
+                <li><a href="home-2.html" class="nav-item">Home 2</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="pricing.html" class="nav-item">Pricing</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <div class="nav-actions">
+                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
+                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-translate-2"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. Hero -->
+    <section class="page-hero" style="padding: 150px 0 20px; background: var(--bg-secondary); text-align: center;">
+        <div class="container reveal">
+            <h1 style="color: var(--primary);">Transparent Pricing</h1>
+            <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Simple, predictable pricing designed to scale with your organization's compliance needs.</p>
+        </div>
+    </section>
+
+    <!-- 2. Pricing Toggle -->
+    <section style="padding: 0; background: var(--bg-secondary);">
+        <div class="container text-center reveal">
+            <div class="toggle-container">
+                <span style="font-weight: 600; font-size: 1.1rem;">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="billing-toggle" checked>
+                    <span class="slider"></span>
+                </label>
+                <span style="font-weight: 600; font-size: 1.1rem;">Annually <span style="color: var(--secondary); font-size: 0.8rem; background: rgba(0,230,118,0.1); padding: 3px 8px; border-radius: 12px; margin-left: 5px;">Save 20%</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Pricing Cards (4 cards only) -->
+    <section class="reveal" style="background: var(--bg-secondary); padding-top: 2rem;">
+        <div class="container">
+            <div class="grid-4">
+                <!-- Plan 1 -->
+                <div class="pricing-card text-center">
+                    <h4>Starter</h4>
+                    <p style="font-size: 0.9rem;">For small teams</p>
+                    <div class="price">$499<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i> Up to 50 DSARs / month</li>
+                        <li><i class="ri-check-line"></i> 5 Integrations</li>
+                        <li><i class="ri-check-line"></i> Basic Email Support</li>
+                        <li><i class="ri-check-line"></i> Standard Reporting</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-outline" style="width: 100%;">Start Free Trial</a>
+                </div>
+                
+                <!-- Plan 2 -->
+                <div class="pricing-card popular text-center">
+                    <div class="popular-badge">Most Popular</div>
+                    <h4>Professional</h4>
+                    <p style="font-size: 0.9rem;">For growing businesses</p>
+                    <div class="price">$999<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i> Up to 200 DSARs / month</li>
+                        <li><i class="ri-check-line"></i> 20 Integrations</li>
+                        <li><i class="ri-check-line"></i> Automated Identity Verification</li>
+                        <li><i class="ri-check-line"></i> Smart Redaction</li>
+                        <li><i class="ri-check-line"></i> Priority Support</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="pricing-card text-center">
+                    <h4>Business</h4>
+                    <p style="font-size: 0.9rem;">For mid-market</p>
+                    <div class="price">$1,999<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i> Up to 1,000 DSARs / month</li>
+                        <li><i class="ri-check-line"></i> Unlimited Integrations</li>
+                        <li><i class="ri-check-line"></i> Advanced API Access</li>
+                        <li><i class="ri-check-line"></i> Custom Workflows</li>
+                        <li><i class="ri-check-line"></i> Dedicated Account Manager</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                </div>
+
+                <!-- Plan 4 -->
+                <div class="pricing-card text-center">
+                    <h4>Enterprise</h4>
+                    <p style="font-size: 0.9rem;">For large organizations</p>
+                    <div class="price" style="font-size: 2.5rem; margin-bottom: 2.45rem;">Custom</div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i> Unlimited DSARs</li>
+                        <li><i class="ri-check-line"></i> On-Premise / Private Cloud</li>
+                        <li><i class="ri-check-line"></i> Custom AI Models</li>
+                        <li><i class="ri-check-line"></i> 24/7 Phone Support</li>
+                        <li><i class="ri-check-line"></i> SLA Guarantees</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Feature Comparison -->
+    <section class="reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Compare Plans</h2>
+                <p>Find the right set of features for your compliance team.</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 800px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color);">
+                            <th style="padding: 1.5rem 1rem; width: 40%; font-size: 1.2rem;">Features</th>
+                            <th style="padding: 1.5rem 1rem; width: 15%; font-weight: 600;">Starter</th>
+                            <th style="padding: 1.5rem 1rem; width: 15%; font-weight: 600; color: var(--primary);">Professional</th>
+                            <th style="padding: 1.5rem 1rem; width: 15%; font-weight: 600;">Business</th>
+                            <th style="padding: 1.5rem 1rem; width: 15%; font-weight: 600;">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1.5rem 1rem; font-weight: 500;">Automated Data Discovery</td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1.5rem 1rem; font-weight: 500;">Branded Privacy Portal</td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1.5rem 1rem; font-weight: 500;">Smart Redaction Engine</td>
+                            <td style="padding: 1.5rem 1rem; color: var(--text-muted);">-</td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1.5rem 1rem; font-weight: 500;">Audit Trail & Logs</td>
+                            <td style="padding: 1.5rem 1rem; color: var(--text-muted);">-</td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1.5rem 1rem; font-weight: 500;">Custom Workflows</td>
+                            <td style="padding: 1.5rem 1rem; color: var(--text-muted);">-</td>
+                            <td style="padding: 1.5rem 1rem; color: var(--text-muted);">-</td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                            <td style="padding: 1.5rem 1rem;"><i class="ri-check-line" style="color: var(--secondary); font-size: 1.2rem;"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQ -->
+    <section class="reveal" style="background: var(--bg-secondary);">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; overflow: hidden;">
+                    <div class="faq-question" style="padding: 1.5rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Can I change plans at any time? <i class="ri-arrow-down-s-line"></i></div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: 0.3s;">
+                        <div style="padding: 0 1.5rem 1.5rem;">Yes, you can upgrade or downgrade your plan at any time. Prorated charges or credits will be applied to your account automatically.</div>
+                    </div>
+                </div>
+                <div class="faq-item" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; overflow: hidden;">
+                    <div class="faq-question" style="padding: 1.5rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">What counts as an integration? <i class="ri-arrow-down-s-line"></i></div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: 0.3s;">
+                        <div style="padding: 0 1.5rem 1.5rem;">An integration is any connection to a third-party service or database (e.g., Salesforce, AWS S3, Mailchimp) where we scan or retrieve data.</div>
+                    </div>
+                </div>
+                <div class="faq-item" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; overflow: hidden;">
+                    <div class="faq-question" style="padding: 1.5rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Is my data secure? <i class="ri-arrow-down-s-line"></i></div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: 0.3s;">
+                        <div style="padding: 0 1.5rem 1.5rem;">Yes, we use AES-256 encryption at rest and TLS 1.3 in transit. We are SOC 2 Type II and ISO 27001 certified.</div>
+                    </div>
+                </div>
+                <div class="faq-item" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; overflow: hidden;">
+                    <div class="faq-question" style="padding: 1.5rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Do you offer a discount for nonprofits? <i class="ri-arrow-down-s-line"></i></div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: 0.3s;">
+                        <div style="padding: 0 1.5rem 1.5rem;">Yes, we offer a 30% discount for registered non-profit organizations. Please contact our sales team to verify your status.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem; display: inline-flex;">
+                        <i class="ri-shield-keyhole-fill"></i> DSARPro
+                    </a>
+                    <p>Automating data privacy and GDPR compliance for modern businesses.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Legal & Privacy</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for privacy updates.</p>
+                    <form action="#" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" required style="padding: 0.6rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.6rem;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DSARPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Pricing Toggle Script
+        const toggle = document.getElementById('billing-toggle');
+        const prices = document.querySelectorAll('.price');
+        const monthlyPrices = ['$499', '$999', '$1,999', 'Custom'];
+        const annualPrices = ['$399', '$799', '$1,599', 'Custom'];
+        
+        if(toggle) {
+            toggle.addEventListener('change', () => {
+                prices.forEach((priceEl, index) => {
+                    if(index < 3) {
+                        if(toggle.checked) {
+                            priceEl.innerHTML = `${annualPrices[index]}<span>/mo</span>`;
+                        } else {
+                            priceEl.innerHTML = `${monthlyPrices[index]}<span>/mo</span>`;
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-main: #0b1121;
+    --bg-secondary: #131c31;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border-color: #1f2937;
+    --card-bg: #111827;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+    --shadow-lg: 0 24px 48px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .navbar {
+    background: rgba(11, 17, 33, 0.9);
+}
+
+body.dark-mode .form-control {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-main);
+}
+
+body.dark-mode .form-control:focus {
+    border-color: var(--primary);
+}
+
+body.dark-mode .card {
+    background: var(--card-bg);
+}
+
+/* Ensure gradients and accents still look good on dark bg */
+body.dark-mode .btn-outline {
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+}
+
+body.dark-mode .btn-outline:hover {
+    background: var(--primary-light);
+    color: #fff;
+}

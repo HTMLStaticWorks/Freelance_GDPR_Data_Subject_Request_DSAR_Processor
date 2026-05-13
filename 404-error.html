@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page Not Found">
+    <title>404 Error | DSARPro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-main);
+            position: relative;
+            overflow: hidden;
+        }
+        .error-page::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(15,98,254,0.05) 0%, transparent 60%);
+            animation: pulse 10s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .error-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        .error-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-shadow: 0 10px 30px rgba(15,98,254,0.3);
+        }
+        /* Navbar is needed to be able to toggle dark mode/rtl and navigate back */
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="ri-shield-keyhole-fill"></i> DSARPro
+            </a>
+            <button class="mobile-toggle"><i class="ri-menu-3-line"></i></button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">Home 1</a></li>
+                <li><a href="home-2.html" class="nav-item">Home 2</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="pricing.html" class="nav-item">Pricing</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <div class="nav-actions">
+                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
+                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-translate-2"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="error-page">
+        <div class="error-content reveal">
+            <div class="error-code">404</div>
+            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=600" alt="Cyber Security Error" class="error-image">
+            <h2 style="margin-bottom: 1rem;">Data Not Found</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem;">The page or record you are looking for has been moved, redacted, or permanently deleted in accordance with privacy policies.</p>
+            <a href="index.html" class="btn btn-primary" style="padding: 1rem 2.5rem;"><i class="ri-arrow-left-line"></i> Return to Dashboard</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem; display: inline-flex;">
+                        <i class="ri-shield-keyhole-fill"></i> DSARPro
+                    </a>
+                    <p>Automating data privacy and GDPR compliance for modern businesses.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Legal & Privacy</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for privacy updates.</p>
+                    <form action="#" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" required style="padding: 0.6rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.6rem;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DSARPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

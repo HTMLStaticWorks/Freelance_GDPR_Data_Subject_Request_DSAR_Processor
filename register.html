@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register to DSARPro">
+    <title>Register | DSARPro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .auth-container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+        .auth-left {
+            flex: 1;
+            background: linear-gradient(135deg, #131c31, #0b1121);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .auth-right {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            background: var(--bg-main);
+            position: relative;
+        }
+        .auth-form-wrapper {
+            width: 100%;
+            max-width: 500px;
+        }
+        .auth-brand {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .theme-toggle-fixed {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+        }
+        @media (max-width: 768px) {
+            .auth-left { display: none; }
+            .auth-brand { left: 2rem; right: auto; }
+            .theme-toggle-fixed { right: 2rem; left: auto; }
+        }
+        
+        /* Password Strength */
+        .strength-meter {
+            height: 4px;
+            background: var(--border-color);
+            margin-top: 0.5rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .strength-bar {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s, background 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Left Side: Illustration -->
+        <div class="auth-left">
+            <div style="position: relative; z-index: 1; max-width: 500px; text-align: center;">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Start Compliance" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); margin-bottom: 2rem; filter: brightness(0.8);">
+                <h2>Join DSARPro Today</h2>
+                <p style="color: rgba(255,255,255,0.8);">Automate compliance, discover hidden data, and build trust with your customers.</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="auth-right">
+            <a href="index.html" class="auth-brand"><i class="ri-shield-keyhole-fill"></i> DSARPro</a>
+            <div class="theme-toggle-fixed">
+                <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
+            </div>
+            
+            <div class="auth-form-wrapper reveal">
+                <h2 style="margin-bottom: 0.5rem;">Create your account</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Start your 14-day free trial. No credit card required.</p>
+                
+                <form id="register-form" action="dashboard.html">
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div class="form-group" style="flex: 1; min-width: 200px;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group" style="flex: 1; min-width: 200px;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Work Email</label>
+                        <input type="email" class="form-control" placeholder="name@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Company Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                        <div class="strength-meter"><div id="strength-bar" class="strength-bar"></div></div>
+                        <p id="strength-text" style="font-size: 0.8rem; margin-top: 0.3rem; color: var(--text-muted);">Use 8+ characters with a mix of letters, numbers & symbols</p>
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                        <input type="checkbox" id="terms" required style="margin-top: 0.3rem;">
+                        <label for="terms" style="font-size: 0.9rem; color: var(--text-muted);">I agree to the <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Privacy Policy</a>.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; margin-top: 1rem;">Create Account</button>
+                </form>
+                
+                <div style="margin-top: 2rem; text-align: center;">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        const password = document.getElementById('password');
+        const strengthBar = document.getElementById('strength-bar');
+        
+        password.addEventListener('input', function() {
+            const val = password.value;
+            let strength = 0;
+            if(val.length > 5) strength += 1;
+            if(val.length > 7) strength += 1;
+            if(/[A-Z]/.test(val)) strength += 1;
+            if(/[0-9]/.test(val)) strength += 1;
+            if(/[^A-Za-z0-9]/.test(val)) strength += 1;
+
+            if(val.length === 0) {
+                strengthBar.style.width = '0%';
+            } else if(strength <= 2) {
+                strengthBar.style.width = '33%';
+                strengthBar.style.background = '#ef4444';
+            } else if(strength <= 4) {
+                strengthBar.style.width = '66%';
+                strengthBar.style.background = '#f59e0b';
+            } else {
+                strengthBar.style.width = '100%';
+                strengthBar.style.background = '#10b981';
+            }
+        });
+
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
