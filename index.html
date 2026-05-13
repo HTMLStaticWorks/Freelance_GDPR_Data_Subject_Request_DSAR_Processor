@@ -30,9 +30,10 @@
                 <li><a href="home-2.html" class="nav-item">Home 2</a></li>
                 <li><a href="about.html" class="nav-item">About</a></li>
                 <li><a href="services.html" class="nav-item">Services</a></li>
-                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="portfolio.html" class="nav-item">Portfolio</a></li>
                 <li><a href="pricing.html" class="nav-item">Pricing</a></li>
                 <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
                 
                 <!-- Navbar Actions for Mobile included in menu -->
                 <div class="nav-actions">
@@ -40,7 +41,7 @@
                         <i class="ri-moon-line"></i>
                     </button>
                     <button id="rtl-btn" class="icon-btn" title="Toggle RTL">
-                        <i class="ri-translate-2"></i>
+                        <i class="ri-arrow-left-right-line"></i>
                     </button>
                     <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
@@ -48,85 +49,114 @@
         </div>
     </nav>
 
+    <style>
+        @keyframes backgroundMove {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.1) translate(-2%, -2%); }
+            100% { transform: scale(1) translate(0, 0); }
+        }
+        .hero-bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/home1-hero.png');
+            background-size: cover;
+            background-position: center;
+            animation: backgroundMove 20s ease-in-out infinite;
+        }
+    </style>
+
     <!-- 1. Hero Section -->
-    <section class="hero-section" style="padding-top: 150px; background: var(--bg-secondary); overflow: hidden;">
-        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
-            <div class="hero-content reveal" style="flex: 1; min-width: 300px;">
-                <h1 style="color: var(--primary);">Automate GDPR Data Subject Requests</h1>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Streamline your DSAR workflows, ensure privacy compliance, and protect customer data with our secure automation platform.</p>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="services.html" class="btn btn-primary">Discover Features</a>
-                    <a href="contact.html" class="btn btn-outline">Request Demo</a>
-                </div>
-            </div>
-            <div class="hero-image reveal" style="flex: 1; min-width: 300px; position: relative;">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="GDPR Dashboard Mockup" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-                <div style="position: absolute; bottom: -20px; left: -20px; background: var(--card-bg); padding: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 1rem;">
-                    <i class="ri-shield-check-fill" style="font-size: 2rem; color: var(--secondary);"></i>
-                    <div>
-                        <h4 style="margin: 0;">100% Secure</h4>
-                        <p style="margin: 0; font-size: 0.8rem;">End-to-End Encrypted</p>
-                    </div>
+    <section class="hero-section" style="height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; text-align: center; color: white;">
+        <div class="hero-bg-wrapper">
+            <div class="hero-bg-image"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content reveal" style="max-width: 800px; margin: 0 auto;">
+                <h1 style="color: #fff; font-size: 4rem; margin-bottom: 1.5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">Automate GDPR Data Subject Requests</h1>
+                <p style="font-size: 1.25rem; margin-bottom: 2.5rem; color: #f3f4f6;">Streamline your DSAR workflows, ensure privacy compliance, and protect customer data with our secure automation platform.</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                    <a href="services.html" class="btn btn-primary" style="padding: 1rem 2.5rem;">Discover Features</a>
+                    <a href="contact.html" class="btn btn-outline" style="padding: 1rem 2.5rem; border-color: #fff; color: #fff;">Request Demo</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 2. Trusted Companies / Clients Section -->
-    <section class="clients-section reveal" style="padding: 4rem 0; border-bottom: 1px solid var(--border-color);">
+    <section class="clients-section reveal" style="padding: 6rem 0; background: var(--bg-main); border-bottom: 1px solid var(--border-color);">
         <div class="container text-center">
-            <h5 style="color: var(--text-muted); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Trusted by Privacy-First Companies</h5>
-            <div class="grid-4">
-                <div class="client-logo" style="padding: 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); transition: var(--transition); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; height: 100px;">
-                    <h3 style="margin:0; color: var(--text-muted);">TechCorp</h3>
+            <p style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 3rem;">Trusted by Privacy-First Companies</p>
+            <div class="grid-4" style="gap: 2rem;">
+                <div class="client-logo-card" style="padding: 2rem; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-color); transition: all 0.4s ease; display: flex; justify-content: center; align-items: center; height: 120px; box-shadow: var(--shadow-sm); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-color)';">
+                    <h3 style="margin:0; color: var(--text-muted); opacity: 0.7; font-weight: 800; letter-spacing: -0.5px;">TechCorp</h3>
                 </div>
-                <div class="client-logo" style="padding: 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); transition: var(--transition); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; height: 100px;">
-                    <h3 style="margin:0; color: var(--text-muted);">SecureNet</h3>
+                <div class="client-logo-card" style="padding: 2rem; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-color); transition: all 0.4s ease; display: flex; justify-content: center; align-items: center; height: 120px; box-shadow: var(--shadow-sm); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-color)';">
+                    <h3 style="margin:0; color: var(--text-muted); opacity: 0.7; font-weight: 800; letter-spacing: -0.5px;">SecureNet</h3>
                 </div>
-                <div class="client-logo" style="padding: 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); transition: var(--transition); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; height: 100px;">
-                    <h3 style="margin:0; color: var(--text-muted);">FinData</h3>
+                <div class="client-logo-card" style="padding: 2rem; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-color); transition: all 0.4s ease; display: flex; justify-content: center; align-items: center; height: 120px; box-shadow: var(--shadow-sm); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-color)';">
+                    <h3 style="margin:0; color: var(--text-muted); opacity: 0.7; font-weight: 800; letter-spacing: -0.5px;">FinData</h3>
                 </div>
-                <div class="client-logo" style="padding: 1.5rem; background: var(--card-bg); border-radius: var(--radius-md); transition: var(--transition); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; height: 100px;">
-                    <h3 style="margin:0; color: var(--text-muted);">HealthSync</h3>
+                <div class="client-logo-card" style="padding: 2rem; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-color); transition: all 0.4s ease; display: flex; justify-content: center; align-items: center; height: 120px; box-shadow: var(--shadow-sm); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-color)';">
+                    <h3 style="margin:0; color: var(--text-muted); opacity: 0.7; font-weight: 800; letter-spacing: -0.5px;">HealthSync</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 3. DSAR Workflow Process Section -->
-    <section class="process-section reveal">
+    <section class="process-section reveal" style="padding: 8rem 0;">
         <div class="container">
             <div class="section-title">
-                <h2>Streamlined DSAR Workflow</h2>
+                <p style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1rem;">The Process</p>
+                <h2 style="margin-bottom: 1.5rem;">Streamlined DSAR Workflow</h2>
                 <p>Manage data subject requests from submission to resolution in four simple steps.</p>
             </div>
-            <div class="grid-4 relative" style="position: relative;">
-                <!-- Step 1 -->
-                <div class="card text-center" style="position: relative; z-index: 1;">
-                    <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; font-weight: bold;">1</div>
-                    <h4>Request Intake</h4>
-                    <p>Secure portal for users to submit requests efficiently.</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="card text-center" style="position: relative; z-index: 1;">
-                    <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; font-weight: bold;">2</div>
-                    <h4>Identity Verification</h4>
-                    <p>Automated verification to prevent unauthorized access.</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="card text-center" style="position: relative; z-index: 1;">
-                    <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; font-weight: bold;">3</div>
-                    <h4>Data Discovery</h4>
-                    <p>AI scans systems to map personal data securely.</p>
-                </div>
-                <!-- Step 4 -->
-                <div class="card text-center" style="position: relative; z-index: 1;">
-                    <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; font-weight: bold;">4</div>
-                    <h4>Redaction & Delivery</h4>
-                    <p>Deliver encrypted reports back to the data subject.</p>
+            <div class="workflow-container" style="position: relative; padding-top: 2rem;">
+                <!-- Connecting Line (Desktop) -->
+                <div class="workflow-line" style="position: absolute; top: 50px; left: 10%; right: 10%; height: 2px; background: repeating-linear-gradient(to right, var(--primary-light) 0, var(--primary-light) 10px, transparent 10px, transparent 20px); z-index: 0; opacity: 0.4;"></div>
+                
+                <div class="grid-4" style="position: relative; z-index: 1;">
+                    <!-- Step 1 -->
+                    <div class="card text-center" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+                        <div style="width: 60px; height: 60px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 2rem; font-weight: 800; box-shadow: 0 0 0 10px rgba(15, 98, 254, 0.1); position: relative;">1</div>
+                        <h4 style="margin-bottom: 1rem;">Request Intake</h4>
+                        <p style="font-size: 0.95rem;">Secure portal for users to submit requests efficiently.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="card text-center" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+                        <div style="width: 60px; height: 60px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 2rem; font-weight: 800; box-shadow: 0 0 0 10px rgba(15, 98, 254, 0.1); position: relative;">2</div>
+                        <h4 style="margin-bottom: 1rem;">Identity Verification</h4>
+                        <p style="font-size: 0.95rem;">Automated verification to prevent unauthorized access.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="card text-center" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+                        <div style="width: 60px; height: 60px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 2rem; font-weight: 800; box-shadow: 0 0 0 10px rgba(15, 98, 254, 0.1); position: relative;">3</div>
+                        <h4 style="margin-bottom: 1rem;">Data Discovery</h4>
+                        <p style="font-size: 0.95rem;">AI scans systems to map personal data securely.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="card text-center" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+                        <div style="width: 60px; height: 60px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 2rem; font-weight: 800; box-shadow: 0 0 0 10px rgba(15, 98, 254, 0.1); position: relative;">4</div>
+                        <h4 style="margin-bottom: 1rem;">Redaction & Delivery</h4>
+                        <p style="font-size: 0.95rem;">Deliver encrypted reports back to the data subject.</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <style>
+            @media (max-width: 1024px) {
+                .workflow-line { display: none; }
+            }
+        </style>
     </section>
 
     <!-- 4. Features Section -->
@@ -137,51 +167,55 @@
                 <p>Everything you need to maintain GDPR compliance at scale.</p>
             </div>
             <div class="grid-4">
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600" alt="Data Mapping">
+                <!-- Card 1 -->
+                <div class="card" style="padding: 0; overflow: hidden; border: 1px solid var(--border-color);">
+                    <div class="card-img-wrapper" style="margin: 0; height: 220px; border-radius: 0;">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600" alt="Data Mapping" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="padding: 2rem;">
                         <h4>Data Mapping</h4>
                         <p>Automatically discover and categorize PII across all your databases and third-party tools.</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" style="padding: 0 2rem 2rem;">
                         <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1614064641913-a5118c72957e?auto=format&fit=crop&q=80&w=600" alt="Secure Redaction">
+                <!-- Card 2 -->
+                <div class="card" style="padding: 0; overflow: hidden; border: 1px solid var(--border-color);">
+                    <div class="card-img-wrapper" style="margin: 0; height: 220px; border-radius: 0;">
+                        <img src="assets/images/Secure Redaction.png" alt="Secure Redaction" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="padding: 2rem;">
                         <h4>Secure Redaction</h4>
                         <p>Intelligent redaction of sensitive data to protect employee and proprietary information.</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" style="padding: 0 2rem 2rem;">
                         <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Audit Logs">
+                <!-- Card 3 -->
+                <div class="card" style="padding: 0; overflow: hidden; border: 1px solid var(--border-color);">
+                    <div class="card-img-wrapper" style="margin: 0; height: 220px; border-radius: 0;">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Audit Logs" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="padding: 2rem;">
                         <h4>Comprehensive Audits</h4>
                         <p>Maintain immutable audit trails for every action taken to demonstrate compliance.</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" style="padding: 0 2rem 2rem;">
                         <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=600" alt="Automated Deletion">
+                <!-- Card 4 -->
+                <div class="card" style="padding: 0; overflow: hidden; border: 1px solid var(--border-color);">
+                    <div class="card-img-wrapper" style="margin: 0; height: 220px; border-radius: 0;">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=600" alt="Automated Deletion" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="padding: 2rem;">
                         <h4>Automated Deletion</h4>
                         <p>Execute 'Right to be Forgotten' requests securely across integrated systems.</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" style="padding: 0 2rem 2rem;">
                         <a href="services-details.html" class="btn btn-outline" style="width: 100%;">Learn More</a>
                     </div>
                 </div>
@@ -193,7 +227,7 @@
     <section class="secure-automation reveal" style="background: #0b1121; color: #fff;">
         <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
             <div style="flex: 1; min-width: 300px;">
-                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800" alt="Cybersecurity Server" style="border-radius: var(--radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                <img src="assets/images/Enterprise-Grade Security Architecture.png" alt="Enterprise Security Architecture" style="border-radius: var(--radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.5); width: 100%; height: auto; object-fit: cover;">
             </div>
             <div style="flex: 1; min-width: 300px;">
                 <h2 style="color: #fff; margin-bottom: 1.5rem;">Enterprise-Grade Security Architecture</h2>
@@ -214,7 +248,75 @@
         </div>
     </section>
 
-    <!-- 6. Testimonials Section -->
+    <!-- 6. Privacy by Design - 3D Interactive Section (New Layout) -->
+    <section class="privacy-design reveal" style="padding: 100px 0; background: var(--bg-main); overflow: hidden;">
+        <div class="container" style="display: flex; align-items: center; gap: 5rem; flex-wrap: wrap;">
+            <div style="flex: 1.2; min-width: 350px;">
+                <p style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1.5rem;">The Architecture</p>
+                <h2 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem;">Privacy by Design <span style="color: var(--primary);">Built In</span></h2>
+                <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem;">Our zero-knowledge architecture ensures that even we cannot access your data. We provide the infrastructure, you keep the keys. It's not just a feature; it's our DNA.</p>
+                
+                <div class="feature-rows" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--primary-light); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="ri-key-2-fill" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Customer-Managed Keys</h4>
+                            <p style="font-size: 0.95rem; margin: 0;">Complete control over encryption keys using KMS integration.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="ri-node-tree" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Decentralized Storage</h4>
+                            <p style="font-size: 0.95rem; margin: 0;">Data fragmentation ensures no single point of failure or exposure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; height: 500px; position: relative; perspective: 1000px; display: flex; justify-content: center; align-items: center;">
+                <!-- 3D Floating Elements (Not Cards) -->
+                <div class="floating-3d-scene" style="width: 100%; height: 100%; transform-style: preserve-3d; animation: sceneRotate 15s infinite linear;">
+                    <!-- Core Shield -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(50px); width: 200px; height: 200px; background: var(--gradient-primary); border-radius: 40px; box-shadow: 0 30px 60px rgba(15, 98, 254, 0.4); display: flex; align-items: center; justify-content: center; border: 4px solid rgba(255,255,255,0.2);">
+                        <i class="ri-shield-user-fill" style="font-size: 6rem; color: white;"></i>
+                    </div>
+                    <!-- Floating Orb 1 -->
+                    <div style="position: absolute; top: 20%; left: 20%; transform: translateZ(150px); width: 80px; height: 80px; background: var(--secondary); border-radius: 50%; box-shadow: 0 10px 30px rgba(0, 230, 118, 0.5); animation: float1 4s infinite ease-in-out;"></div>
+                    <!-- Floating Orb 2 -->
+                    <div style="position: absolute; bottom: 20%; right: 20%; transform: translateZ(100px); width: 60px; height: 60px; background: var(--primary-light); border-radius: 50%; box-shadow: 0 10px 30px rgba(90, 146, 250, 0.5); animation: float2 6s infinite ease-in-out;"></div>
+                    <!-- Data Rings -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotateX(70deg); width: 350px; height: 350px; border: 2px dashed var(--primary); border-radius: 50%; opacity: 0.3; animation: ringRotate 10s infinite linear;"></div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotateY(70deg); width: 400px; height: 400px; border: 2px dashed var(--secondary); border-radius: 50%; opacity: 0.2; animation: ringRotate 15s infinite linear reverse;"></div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            @keyframes sceneRotate {
+                0% { transform: rotateY(0deg); }
+                100% { transform: rotateY(360deg); }
+            }
+            @keyframes ringRotate {
+                from { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+                to { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+            }
+            @keyframes float1 {
+                0%, 100% { transform: translateZ(150px) translateY(0); }
+                50% { transform: translateZ(150px) translateY(-30px); }
+            }
+            @keyframes float2 {
+                0%, 100% { transform: translateZ(100px) translateY(0); }
+                50% { transform: translateZ(100px) translateY(20px); }
+            }
+        </style>
+    </section>
+
+    <!-- 7. Testimonials Section -->
     <section class="testimonials-section reveal">
         <div class="container">
             <div class="section-title">
@@ -226,7 +328,7 @@
                     <div style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"><i class="ri-double-quotes-l"></i></div>
                     <p style="color: #fff; font-style: italic; margin-bottom: 1.5rem; flex-grow: 1;">"DSARPro cut our request processing time by 80%. The automated data mapping is unparalleled."</p>
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">JD</div>
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2.5&w=100&h=100&q=80" alt="John Doe" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.2);">
                         <div>
                             <h5 style="margin: 0; color: #fff;">John Doe</h5>
                             <span style="font-size: 0.8rem; opacity: 0.8;">CISO, TechCorp</span>
@@ -237,7 +339,7 @@
                     <div style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"><i class="ri-double-quotes-l"></i></div>
                     <p style="color: #fff; font-style: italic; margin-bottom: 1.5rem; flex-grow: 1;">"The secure redaction feature alone is worth the investment. It's transformed our workflow."</p>
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">SM</div>
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=100&h=100&q=80" alt="Sarah Mayer" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.2);">
                         <div>
                             <h5 style="margin: 0; color: #fff;">Sarah Mayer</h5>
                             <span style="font-size: 0.8rem; opacity: 0.8;">DPO, FinData</span>
@@ -248,7 +350,7 @@
                     <div style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"><i class="ri-double-quotes-l"></i></div>
                     <p style="color: #fff; font-style: italic; margin-bottom: 1.5rem; flex-grow: 1;">"Finally, a tool that understands the complexities of GDPR. Highly recommended for enterprise."</p>
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">RW</div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2.5&w=100&h=100&q=80" alt="Robert Wong" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.2);">
                         <div>
                             <h5 style="margin: 0; color: #fff;">Robert Wong</h5>
                             <span style="font-size: 0.8rem; opacity: 0.8;">Legal Counsel, HealthSync</span>
@@ -259,7 +361,7 @@
                     <div style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"><i class="ri-double-quotes-l"></i></div>
                     <p style="color: #fff; font-style: italic; margin-bottom: 1.5rem; flex-grow: 1;">"Implementation was seamless, and the support team is outstanding. Five stars."</p>
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">EL</div>
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=100&h=100&q=80" alt="Emma Lewis" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.2);">
                         <div>
                             <h5 style="margin: 0; color: #fff;">Emma Lewis</h5>
                             <span style="font-size: 0.8rem; opacity: 0.8;">Compliance Dir., SecureNet</span>
@@ -279,13 +381,12 @@
                         <i class="ri-shield-keyhole-fill"></i> DSARPro
                     </a>
                     <p>Automating data privacy and GDPR compliance for modern businesses. Protecting user data, one request at a time.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                    <div class="footer-socials" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-twitter-x-fill"></i></a>
+                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
                 <div class="footer-widget">
@@ -293,8 +394,8 @@
                     <ul class="footer-links">
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">

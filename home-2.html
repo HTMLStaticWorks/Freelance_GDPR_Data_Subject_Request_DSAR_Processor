@@ -109,12 +109,13 @@
                 <li><a href="home-2.html" class="nav-item">Home 2</a></li>
                 <li><a href="about.html" class="nav-item">About</a></li>
                 <li><a href="services.html" class="nav-item">Services</a></li>
-                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="portfolio.html" class="nav-item">Portfolio</a></li>
                 <li><a href="pricing.html" class="nav-item">Pricing</a></li>
                 <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
                 <div class="nav-actions">
                     <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
-                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-translate-2"></i></button>
+                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-arrow-left-right-line"></i></button>
                     <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
             </ul>
@@ -122,48 +123,117 @@
     </nav>
 
     <!-- 1. Premium Hero Section -->
-    <section class="premium-hero text-center">
-        <div class="container relative">
-            <h1 class="reveal" style="font-size: 4rem; max-width: 800px; margin: 0 auto 1.5rem;">The AI Standard for <span style="color: var(--primary-light);">Privacy Compliance</span></h1>
-            <p class="reveal" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; color: #9ca3af;">Deliver flawless DSAR experiences while drastically reducing operational costs. Enterprise-grade automation.</p>
-            <div class="reveal" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 4rem;">
-                <a href="register.html" class="btn btn-primary" style="padding: 1rem 2rem;">Start Free Trial</a>
-                <a href="contact.html" class="btn btn-outline" style="padding: 1rem 2rem; border-color: rgba(255,255,255,0.2); color: #fff;">Book a Demo</a>
+    <section class="premium-hero text-center" style="position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; overflow: hidden; background: #000; padding: 0;">
+        <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.5;">
+            <source src="assets/images/home-hero.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%); z-index: 1;"></div>
+        
+        <div class="container relative" style="z-index: 2;">
+            <h1 class="reveal" style="font-size: 4.5rem; max-width: 900px; margin: 0 auto 1.5rem; color: #fff; text-shadow: 0 4px 15px rgba(0,0,0,0.6); line-height: 1.1;">The AI Standard for <br><span style="color: var(--primary-light);">Privacy Compliance</span></h1>
+            <p class="reveal" style="font-size: 1.25rem; max-width: 650px; margin: 0 auto 3rem; color: #f3f4f6; text-shadow: 0 2px 10px rgba(0,0,0,0.5); opacity: 0.9;">Deliver flawless DSAR experiences while drastically reducing operational costs. Enterprise-grade automation powered by deep privacy intelligence.</p>
+            <div class="reveal" style="display: flex; gap: 1.5rem; justify-content: center;">
+                <a href="register.html" class="btn btn-primary" style="padding: 1.2rem 2.5rem; font-size: 1.1rem; border-radius: 50px;">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-outline" style="padding: 1.2rem 2.5rem; font-size: 1.1rem; border-color: rgba(255,255,255,0.5); color: #fff; backdrop-filter: blur(10px); border-radius: 50px;">Book a Demo</a>
             </div>
-            
-            <div class="glass-card reveal" style="max-width: 900px; margin: 0 auto;">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" alt="Dashboard Premium UI" style="border-radius: 8px; width: 100%;">
-            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: #fff; opacity: 0.7; animation: heroBounce 2s infinite; z-index: 2;">
+            <i class="ri-arrow-down-double-line" style="font-size: 2rem;"></i>
         </div>
     </section>
 
+    <style>
+        @keyframes heroBounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+            40% {transform: translateX(-50%) translateY(-10px);}
+            60% {transform: translateX(-50%) translateY(-5px);}
+        }
+        .premium-hero .container { margin-top: 80px; } /* Offset for navbar */
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem; /* Changed from -100px to sit below hero */
+            position: relative;
+            z-index: 10;
+        }
+        .stat-box {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 3rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .stat-box:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: var(--primary-light);
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 30px 60px -12px rgba(15, 98, 254, 0.3);
+        }
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-label {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); margin-top: 2rem; }
+            .stat-number { font-size: 2.5rem; }
+        }
+        @media (max-width: 640px) {
+            .stats-grid { grid-template-columns: 1fr; margin-top: 1rem; }
+        }
+    </style>
+
     <!-- 2. Statistics Section -->
-    <section class="statistics-section" style="padding: 0 0 5rem;">
+    <section class="statistics-section" style="padding: 0 0 8rem; background: var(--bg-main);">
         <div class="container">
             <div class="stats-grid reveal">
                 <div class="stat-box">
                     <div class="stat-number">
                         <span class="counter" data-target="99">0</span><span>%</span>
                     </div>
-                    <p style="margin:0;">Automation Rate</p>
+                    <p class="stat-label">Automation Rate</p>
                 </div>
                 <div class="stat-box">
                     <div class="stat-number">
                         <span>$</span><span class="counter" data-target="2">0</span><span>M+</span>
                     </div>
-                    <p style="margin:0;">Fines Avoided</p>
+                    <p class="stat-label">Fines Avoided</p>
                 </div>
                 <div class="stat-box">
                     <div class="stat-number">
                         <span class="counter" data-target="500">0</span><span>+</span>
                     </div>
-                    <p style="margin:0;">Enterprise Clients</p>
+                    <p class="stat-label">Enterprise Clients</p>
                 </div>
                 <div class="stat-box">
                     <div class="stat-number">
                         <span class="counter" data-target="10">0</span><span>x</span>
                     </div>
-                    <p style="margin:0;">Faster Processing</p>
+                    <p class="stat-label">Faster Processing</p>
                 </div>
             </div>
         </div>
@@ -195,7 +265,9 @@
             </div>
             <div style="flex: 1; min-width: 300px; order: 1; position: relative;">
                 <div style="position: absolute; top: -20px; left: -20px; width: 100px; height: 100px; background: var(--secondary); opacity: 0.2; border-radius: 50%; filter: blur(20px);"></div>
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="AI Technology" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; position: relative; z-index: 1;">
+                <video autoplay muted loop playsinline style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; position: relative; z-index: 1; object-fit: cover;">
+                    <source src="assets/images/AI-Powered Discovery Engine.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
@@ -208,87 +280,240 @@
                 <p>Execute complex data operations securely from a single dashboard.</p>
             </div>
             <div class="grid-4">
-                <div class="card" style="border-top: 4px solid var(--primary);">
-                    <i class="ri-map-pin-line" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                    <h4>Global Data Mapping</h4>
-                    <p>Visualize data flows across geographic boundaries and systems.</p>
-                    <div class="card-footer" style="padding-top: 0;">
-                        <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">View feature &rarr;</a>
+                <div class="card" style="border-top: 4px solid var(--primary); padding: 0; overflow: hidden;">
+                    <div class="card-img-wrapper" style="height: 180px; border-radius: 0; margin-bottom: 0;">
+                        <img src="assets/images/global data mapping.png" alt="Global Data Mapping" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1.5rem 2rem 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Global Data Mapping</h4>
+                        <p style="margin-bottom: 1.5rem;">Visualize data flows across geographic boundaries and systems.</p>
+                        <div class="card-footer" style="padding-top: 0;">
+                            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">View feature &rarr;</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="border-top: 4px solid var(--secondary);">
-                    <i class="ri-eraser-line" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
-                    <h4>Auto-Redaction</h4>
-                    <p>Redact other users' PII before delivering the DSAR report.</p>
-                    <div class="card-footer" style="padding-top: 0;">
-                        <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">View feature &rarr;</a>
+                <div class="card" style="border-top: 4px solid var(--secondary); padding: 0; overflow: hidden;">
+                    <div class="card-img-wrapper" style="height: 180px; border-radius: 0; margin-bottom: 0;">
+                        <img src="assets/images/Auto-Redaction.png" alt="Auto-Redaction" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1.5rem 2rem 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Auto-Redaction</h4>
+                        <p style="margin-bottom: 1.5rem;">Redact other users' PII before delivering the DSAR report.</p>
+                        <div class="card-footer" style="padding-top: 0;">
+                            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">View feature &rarr;</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="border-top: 4px solid #f59e0b;">
-                    <i class="ri-delete-bin-line" style="font-size: 2.5rem; color: #f59e0b; margin-bottom: 1rem;"></i>
-                    <h4>Secure Deletion</h4>
-                    <p>Fulfill 'Right to Erasure' requests with cryptographic certainty.</p>
-                    <div class="card-footer" style="padding-top: 0;">
-                        <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">View feature &rarr;</a>
+                <div class="card" style="border-top: 4px solid #f59e0b; padding: 0; overflow: hidden;">
+                    <div class="card-img-wrapper" style="height: 180px; border-radius: 0; margin-bottom: 0;">
+                        <img src="assets/images/Secure Deletion.png" alt="Secure Deletion" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1.5rem 2rem 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Secure Deletion</h4>
+                        <p style="margin-bottom: 1.5rem;">Fulfill 'Right to Erasure' requests with cryptographic certainty.</p>
+                        <div class="card-footer" style="padding-top: 0;">
+                            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">View feature &rarr;</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="border-top: 4px solid #8b5cf6;">
-                    <i class="ri-file-chart-line" style="font-size: 2.5rem; color: #8b5cf6; margin-bottom: 1rem;"></i>
-                    <h4>Compliance Reporting</h4>
-                    <p>Generate one-click reports for data protection authorities.</p>
-                    <div class="card-footer" style="padding-top: 0;">
-                        <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">View feature &rarr;</a>
+                <div class="card" style="border-top: 4px solid #8b5cf6; padding: 0; overflow: hidden;">
+                    <div class="card-img-wrapper" style="height: 180px; border-radius: 0; margin-bottom: 0;">
+                        <img src="assets/images/Compliance Reporting.png" alt="Compliance Reporting" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1.5rem 2rem 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Compliance Reporting</h4>
+                        <p style="margin-bottom: 1.5rem;">Generate one-click reports for data protection authorities.</p>
+                        <div class="card-footer" style="padding-top: 0;">
+                            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">View feature &rarr;</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. Enterprise Security Section -->
-    <section class="reveal" style="background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat; position: relative; color: #fff; padding: 8rem 0;">
-        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(11, 17, 33, 0.9);"></div>
-        <div class="container relative text-center" style="z-index: 1;">
-            <i class="ri-shield-star-fill" style="font-size: 4rem; color: var(--secondary); margin-bottom: 1rem; display: inline-block;"></i>
-            <h2 style="color: #fff; font-size: 3rem; margin-bottom: 1.5rem;">Bank-Grade Security. Built-In.</h2>
-            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 3rem; color: #d1d5db;">We treat your data with the highest level of security. SOC2 Type II, ISO 27001, and HIPAA compliant infrastructure ensures peace of mind.</p>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                <div style="padding: 1rem 2rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; backdrop-filter: blur(5px);">SOC 2 Type II</div>
-                <div style="padding: 1rem 2rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; backdrop-filter: blur(5px);">ISO 27001</div>
-                <div style="padding: 1rem 2rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; backdrop-filter: blur(5px);">GDPR Ready</div>
+
+    <!-- 6. 3D Global Data Sovereignty Section -->
+    <section class="data-sovereignty-3d reveal" style="background: var(--bg-secondary); padding: 10rem 0; overflow: hidden; position: relative;">
+        <div class="container" style="display: flex; align-items: center; gap: 4rem; flex-direction: row-reverse; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 400px;">
+                <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 1rem;">Global Residency</span>
+                <h2 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem;">Multi-Region <br><span style="color: var(--primary);">Data Sovereignty</span></h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem;">Keep your data exactly where it belongs. Our 3D-mapped infrastructure ensures that personal information never crosses borders without explicit authorization, meeting strict local requirements like GDPR, CCPA, and LGPD.</p>
+                
+                <div class="sovereignty-features">
+                    <div style="padding: 1.5rem; background: var(--card-bg); border-radius: 12px; margin-bottom: 1rem; border-left: 4px solid var(--primary); box-shadow: var(--shadow-sm);">
+                        <h4 style="margin-bottom: 0.5rem; color: var(--text-main);">EU-Strict Residency</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">Processing isolated within the European Economic Area.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: var(--card-bg); border-radius: 12px; border-left: 4px solid var(--secondary); box-shadow: var(--shadow-sm);">
+                        <h4 style="margin-bottom: 0.5rem; color: var(--text-main);">Geo-Fenced Processing</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">Automated logic that prevents unauthorized data egress.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 400px; display: flex; justify-content: center; perspective: 1500px;">
+                <div class="cube-wrapper">
+                    <div class="cube">
+                        <div class="cube-face front"><i class="ri-global-line"></i></div>
+                        <div class="cube-face back"><i class="ri-lock-line"></i></div>
+                        <div class="cube-face right"><i class="ri-database-2-line"></i></div>
+                        <div class="cube-face left"><i class="ri-shield-check-line"></i></div>
+                        <div class="cube-face top"><i class="ri-cloud-line"></i></div>
+                        <div class="cube-face bottom"><i class="ri-server-line"></i></div>
+                    </div>
+                    <div class="cube-shadow"></div>
+                </div>
             </div>
         </div>
+
+        <style>
+            .cube-wrapper {
+                position: relative;
+                width: 240px;
+                height: 240px;
+                transform-style: preserve-3d;
+            }
+            .cube {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transform-style: preserve-3d;
+                animation: cubeRotate 20s infinite linear;
+            }
+            .cube-face {
+                position: absolute;
+                width: 240px;
+                height: 240px;
+                background: rgba(15, 98, 254, 0.05);
+                border: 2px solid var(--primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 5rem;
+                color: var(--primary);
+                backdrop-filter: blur(8px);
+                box-shadow: inset 0 0 40px rgba(15, 98, 254, 0.1);
+            }
+            .cube-face.front  { transform: translateZ(120px); }
+            .cube-face.back   { transform: rotateY(180deg) translateZ(120px); }
+            .cube-face.right  { transform: rotateY(90deg) translateZ(120px); }
+            .cube-face.left   { transform: rotateY(-90deg) translateZ(120px); }
+            .cube-face.top    { transform: rotateX(90deg) translateZ(120px); }
+            .cube-face.bottom { transform: rotateX(-90deg) translateZ(120px); }
+
+            .cube-shadow {
+                position: absolute;
+                bottom: -120px;
+                left: 50%;
+                width: 300px;
+                height: 50px;
+                background: radial-gradient(ellipse at center, rgba(15, 98, 254, 0.15) 0%, transparent 70%);
+                transform: translateX(-50%) rotateX(90deg);
+                filter: blur(20px);
+                animation: shadowPulse 5s infinite ease-in-out;
+            }
+
+            @keyframes cubeRotate {
+                0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+                100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+            }
+            @keyframes shadowPulse {
+                0%, 100% { transform: translateX(-50%) rotateX(90deg) scale(1); opacity: 0.4; }
+                50% { transform: translateX(-50%) rotateX(90deg) scale(1.3); opacity: 0.6; }
+            }
+        </style>
     </section>
 
-    <!-- 6. Call-To-Action + FAQ Combo Section -->
-    <section class="reveal">
-        <div class="container" style="display: flex; flex-wrap: wrap; gap: 4rem;">
-            <div style="flex: 1; min-width: 300px;">
-                <h2 style="margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
-                <div class="faq-accordion">
-                    <div class="faq-item">
-                        <div class="faq-question">How long does implementation take? <i class="ri-arrow-down-s-line"></i></div>
-                        <div class="faq-answer"><div class="faq-answer-inner">Typically, our platform can be fully integrated within 2-4 weeks depending on the complexity of your tech stack.</div></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Does it support CCPA as well? <i class="ri-arrow-down-s-line"></i></div>
-                        <div class="faq-answer"><div class="faq-answer-inner">Yes, our platform supports GDPR, CCPA, CPRA, LGPD, and other major global privacy frameworks out of the box.</div></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Is the data processed in the EU? <i class="ri-arrow-down-s-line"></i></div>
-                        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We offer data residency options allowing EU customers to keep all processing strictly within EU borders.</div></div>
-                    </div>
+    <!-- 7. FAQ & Intelligence Section -->
+    <section class="reveal" style="background: var(--bg-main); padding: 8rem 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3rem; margin-bottom: 1rem;">Compliance <span style="color: var(--primary);">Intelligence</span></h2>
+                <p style="color: var(--text-muted);">Quick answers to common privacy operations questions.</p>
+            </div>
+            
+            <div class="faq-bento-grid">
+                <div class="bento-item">
+                    <i class="ri-timer-flash-line" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="margin-bottom: 1rem;">Implementation Timeline</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">Typically, our platform can be fully integrated within 2-4 weeks depending on the complexity of your tech stack.</p>
+                </div>
+                <div class="bento-item bento-wide">
+                    <i class="ri-shield-check-line" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="margin-bottom: 1rem;">Global Framework Support</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">Yes, our platform supports GDPR, CCPA, CPRA, LGPD, and other major global privacy frameworks out of the box. We stay updated with the latest regulatory changes so you don't have to worry about missing deadlines.</p>
+                </div>
+                <div class="bento-item bento-wide">
+                    <i class="ri-earth-line" style="font-size: 2rem; color: #8b5cf6; margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="margin-bottom: 1rem;">EU Data Residency</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">Absolutely. We offer data residency options allowing EU customers to keep all processing strictly within EU borders. All infrastructure is ISO 27001 certified and SOC2 Type II compliant.</p>
+                </div>
+                <div class="bento-item bento-accent">
+                    <h4 style="margin-bottom: 0.5rem; color: #fff;">More Questions?</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem; opacity: 0.8;">Our privacy experts are ready to help.</p>
+                    <a href="contact.html" class="btn" style="background: #fff; color: var(--primary); width: 100%; border-radius: 10px;">Contact Support</a>
                 </div>
             </div>
-            <div style="flex: 1; min-width: 300px;">
-                <div style="background: var(--gradient-primary); border-radius: var(--radius-lg); padding: 3rem; color: #fff; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-                    <h2 style="color: #fff; margin-bottom: 1rem;">Ready to automate compliance?</h2>
-                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem;">Join industry leaders who trust DSARPro to handle their sensitive privacy operations.</p>
-                    <form style="display: flex; gap: 1rem; flex-direction: column;">
-                        <input type="email" placeholder="Enter your work email" style="padding: 1rem; border: none; border-radius: 8px; width: 100%; outline: none; font-family: inherit;">
-                        <button type="submit" class="btn" style="background: #111827; color: #fff; padding: 1rem;">Get a Demo</button>
-                    </form>
-                </div>
+        </div>
+
+        <style>
+            .faq-bento-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                perspective: 2000px; /* Added perspective for 3D effects */
+            }
+            .bento-item {
+                background: var(--bg-secondary);
+                padding: 2.5rem;
+                border-radius: 24px;
+                border: 1px solid var(--border-color);
+                transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+                transform-style: preserve-3d;
+                position: relative;
+            }
+            .bento-item:hover {
+                transform: rotateX(5deg) rotateY(-5deg) translateZ(20px);
+                border-color: var(--primary-light);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+                z-index: 10;
+            }
+            .bento-item i, .bento-item h4, .bento-item p {
+                transform: translateZ(30px); /* Parallax effect for content */
+            }
+            .bento-wide { grid-column: span 2; }
+            .bento-accent {
+                background: var(--primary);
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            @media (max-width: 1024px) {
+                .faq-bento-grid { grid-template-columns: 1fr 1fr; }
+                .bento-wide { grid-column: span 1; }
+                .bento-item:hover { transform: none; } /* Disable 3D on tablet/mobile for better UX */
+            }
+            @media (max-width: 640px) {
+                .faq-bento-grid { grid-template-columns: 1fr; }
+            }
+        </style>
+    </section>
+
+    <!-- 8. Modern Full-Width CTA -->
+    <section class="reveal" style="padding: 10rem 0; background: #0b1121; position: relative; overflow: hidden; color: #fff;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(15, 98, 254, 0.1) 0%, transparent 100%);"></div>
+        <div class="container text-center" style="position: relative; z-index: 1;">
+            <h2 style="color: #fff; font-size: 4rem; line-height: 1.1; margin-bottom: 2rem;">Ready to automate <br><span style="color: var(--primary-light);">compliance?</span></h2>
+            <p style="font-size: 1.25rem; color: #9ca3af; max-width: 700px; margin: 0 auto 3.5rem;">Join industry leaders who trust DSARPro to handle their most sensitive privacy operations with absolute certainty.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.1rem; border-radius: 50px;">Start 14-Day Free Trial</a>
+                <a href="contact.html" class="btn btn-outline" style="padding: 1.2rem 3rem; font-size: 1.1rem; border-color: rgba(255,255,255,0.2); color: #fff; border-radius: 50px;">Book a Personal Demo</a>
             </div>
+            <p style="margin-top: 2rem; color: #5e6a75; font-size: 0.9rem;">SOC 2 Type II • ISO 27001 • HIPAA Compliant</p>
         </div>
     </section>
 
@@ -306,7 +531,6 @@
                         <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
                         <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
                         <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
                         <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
@@ -315,8 +539,8 @@
                     <ul class="footer-links">
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of GDPR DSAR Processing solutions and successful implementations.">
+    <title>Portfolio | GDPR DSAR Processor</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* 3D Animations & Custom Portfolio Styles */
+        :root {
+            --perspective: 1000px;
+        }
+
+        .portfolio-hero {
+            perspective: var(--perspective);
+            overflow: hidden;
+            background: radial-gradient(circle at top right, var(--primary-light), transparent), var(--bg-secondary);
+        }
+
+        .floating-3d-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            transform: rotateX(10deg) rotateY(-10deg) translateZ(50px);
+            transition: transform 0.5s ease;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .floating-3d-card:hover {
+            transform: rotateX(0deg) rotateY(0deg) translateZ(100px) scale(1.05);
+        }
+
+        /* Section 2: Flip Cards */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 350px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .flip-card-front {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+        }
+
+        .flip-card-back {
+            background: var(--gradient-primary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* Section 3: Isometric Roadmap */
+        .isometric-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 0;
+            transform: rotateX(30deg) rotateZ(-15deg);
+            transform-style: preserve-3d;
+        }
+
+        .iso-step {
+            width: 200px;
+            height: 200px;
+            background: var(--card-bg);
+            margin: 0 -20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 20px 20px 40px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            position: relative;
+            transform: translateZ(0);
+        }
+
+        .iso-step:hover {
+            transform: translateZ(50px) scale(1.1);
+            background: var(--primary);
+            color: white;
+        }
+
+        .iso-step i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Section 4: 3D Rotating Cylinder (Logos) */
+        .logo-cylinder {
+            height: 400px;
+            position: relative;
+            perspective: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cylinder-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotateCylinder 20s linear infinite;
+        }
+
+        @keyframes rotateCylinder {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        .logo-item {
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            backface-visibility: visible;
+        }
+
+        /* Positioning logo items in a circle */
+        .logo-item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+        .logo-item:nth-child(2) { transform: rotateY(60deg) translateZ(300px); }
+        .logo-item:nth-child(3) { transform: rotateY(120deg) translateZ(300px); }
+        .logo-item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
+        .logo-item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
+        .logo-item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }
+
+        .cylinder-inner:hover {
+            animation-play-state: paused;
+        }
+
+        /* General Portfolio Fixes */
+        .portfolio-tag {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        /* Responsive Portfolio Fixes */
+        @media (max-width: 768px) {
+            .isometric-container {
+                flex-direction: column;
+                transform: none;
+                gap: 2rem;
+            }
+            .iso-step {
+                margin: 0;
+            }
+            .logo-cylinder {
+                perspective: none;
+            }
+            .cylinder-inner {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+                position: static;
+                animation: none;
+                transform: none;
+                transform-style: flat;
+            }
+            .logo-item {
+                position: static;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="ri-shield-keyhole-fill"></i> DSARPro
+            </a>
+            
+            <button class="mobile-toggle"><i class="ri-menu-3-line"></i></button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">Home 1</a></li>
+                <li><a href="home-2.html" class="nav-item">Home 2</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="portfolio.html" class="nav-item active">Portfolio</a></li>
+                <li><a href="pricing.html" class="nav-item">Pricing</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+                
+                <div class="nav-actions">
+                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL">
+                        <i class="ri-arrow-left-right-line"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. 3D Hero Section -->
+    <section class="portfolio-hero">
+        <div class="container" style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
+            <div class="hero-text reveal" style="flex: 1; min-width: 300px;">
+                <h1 style="color: var(--primary);">Showcasing Privacy Excellence</h1>
+                <p>Explore our track record of automating DSAR workflows for global enterprises. We turn compliance challenges into competitive advantages.</p>
+                <a href="#projects" class="btn btn-primary">View Case Studies</a>
+            </div>
+            <div class="hero-visual reveal" style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; height: 400px;">
+                <div class="floating-3d-card text-center">
+                    <i class="ri-shield-check-line" style="font-size: 4rem; color: var(--secondary);"></i>
+                    <h3>Enterprise Security</h3>
+                    <p>99.9% Automation Rate</p>
+                    <div style="margin-top: 1rem; height: 5px; background: var(--border-color); border-radius: 5px;">
+                        <div style="width: 90%; height: 100%; background: var(--secondary); border-radius: 5px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 3D Flip Card Projects Section -->
+    <section id="projects" class="reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Successful Implementations</h2>
+                <p>Hover over each project to see the impact we made.</p>
+            </div>
+            <div class="grid-4" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <!-- Project 1 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <i class="ri-bank-line" style="font-size: 3rem; color: var(--primary);"></i>
+                            <h4>Global Bank</h4>
+                            <p>Compliance Transformation</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Results</h4>
+                            <ul style="text-align: left; margin-top: 1rem;">
+                                <li><i class="ri-check-line"></i> 70% Cost reduction</li>
+                                <li><i class="ri-check-line"></i> Full automation</li>
+                                <li><i class="ri-check-line"></i> Zero breach reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <i class="ri-shopping-bag-3-line" style="font-size: 3rem; color: var(--secondary);"></i>
+                            <h4>E-commerce Giant</h4>
+                            <p>Consumer Rights Portal</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Results</h4>
+                            <ul style="text-align: left; margin-top: 1rem;">
+                                <li><i class="ri-check-line"></i> 1M+ Requests/Month</li>
+                                <li><i class="ri-check-line"></i> < 2s Response time</li>
+                                <li><i class="ri-check-line"></i> Global scalability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <i class="ri-heart-pulse-line" style="font-size: 3rem; color: #ff5252;"></i>
+                            <h4>HealthTech SaaS</h4>
+                            <p>HIPAA & GDPR Sync</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Results</h4>
+                            <ul style="text-align: left; margin-top: 1rem;">
+                                <li><i class="ri-check-line"></i> Unified dashboard</li>
+                                <li><i class="ri-check-line"></i> Sensitive data masking</li>
+                                <li><i class="ri-check-line"></i> 100% Audit pass</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <i class="ri-plane-line" style="font-size: 3rem; color: var(--primary-light);"></i>
+                            <h4>Airlines Group</h4>
+                            <p>Cross-Border Privacy</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Results</h4>
+                            <ul style="text-align: left; margin-top: 1rem;">
+                                <li><i class="ri-check-line"></i> Multi-region support</li>
+                                <li><i class="ri-check-line"></i> RTL Compatibility</li>
+                                <li><i class="ri-check-line"></i> EU-US Bridge</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Isometric DSAR Roadmap Section -->
+    <section class="roadmap-section reveal" style="background: var(--bg-secondary); overflow: hidden;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Deployment Journey</h2>
+                <p>How we take your organization from manual to automated in 4 steps.</p>
+            </div>
+            <div class="isometric-container">
+                <div class="iso-step">
+                    <i class="ri-search-eye-line"></i>
+                    <h4>Discovery</h4>
+                </div>
+                <div class="iso-step">
+                    <i class="ri-settings-3-line"></i>
+                    <h4>Integration</h4>
+                </div>
+                <div class="iso-step">
+                    <i class="ri-magic-line"></i>
+                    <h4>Automation</h4>
+                </div>
+                <div class="iso-step">
+                    <i class="ri-shield-user-line"></i>
+                    <h4>Compliance</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 3D Rotating Logo Cloud Section -->
+    <section class="clients-3d reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted Partners</h2>
+                <p>Join the growing list of privacy-conscious organizations.</p>
+            </div>
+            <div class="logo-cylinder">
+                <div class="cylinder-inner">
+                    <div class="logo-item"><h3>TechCorp</h3></div>
+                    <div class="logo-item"><h3>SecureNet</h3></div>
+                    <div class="logo-item"><h3>FinData</h3></div>
+                    <div class="logo-item"><h3>HealthSync</h3></div>
+                    <div class="logo-item"><h3>CloudWay</h3></div>
+                    <div class="logo-item"><h3>EcoSafe</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem; display: inline-flex;">
+                        <i class="ri-shield-keyhole-fill"></i> DSARPro
+                    </a>
+                    <p>Automating data privacy and GDPR compliance for modern businesses. Protecting user data, one request at a time.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Newsletter</h4>
+                    <form action="#" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DSARPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple scroll reveal
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 150;
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        reveal(); // Initial check
+    </script>
+</body>
+</html>
