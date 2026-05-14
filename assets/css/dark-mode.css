@@ -47,3 +47,7 @@ body.dark-mode .social-icon:hover, body.dark-mode .social-link:hover {
     background: var(--primary);
     color: #fff !important;
 }
+
+body.dark-mode .apple-icon {
+    color: #fff;
+}

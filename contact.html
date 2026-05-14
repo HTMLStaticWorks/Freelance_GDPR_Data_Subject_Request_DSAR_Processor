@@ -29,6 +29,19 @@
                 text-align: center !important;
             }
         }
+        
+        .btn-cta-white:hover {
+            background: #f3f4f6 !important;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn-cta-outline:hover {
+            background: #fff !important;
+            color: var(--primary) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body>
@@ -161,8 +174,8 @@
             <h2 style="color: #fff; margin-bottom: 1.5rem; font-size: 2.8rem;">Ready to Automate Your Compliance?</h2>
             <p style="color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto 3rem; font-size: 1.2rem;">Schedule a 15-minute personalized demo with our privacy experts to see how DSARPro can transform your workflow.</p>
             <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-                <a href="pricing.html" class="btn" style="background: #fff; color: var(--primary); padding: 1rem 2.5rem;">View Pricing Plans</a>
-                <a href="#" class="btn" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 1rem 2.5rem; backdrop-filter: blur(10px);">Schedule a Demo</a>
+                <a href="pricing.html" class="btn btn-cta-white" style="background: #fff; color: var(--primary); padding: 1rem 2.5rem; transition: all 0.3s ease;">View Pricing Plans</a>
+                <a href="#" class="btn btn-cta-outline" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 1rem 2.5rem; backdrop-filter: blur(10px); transition: all 0.3s ease;">Schedule a Demo</a>
             </div>
         </div>
     </section>
@@ -218,7 +231,12 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <!-- Back to Top Button -->`n    <div id="backToTop" class="back-to-top">`n        <i class="ri-arrow-up-line"></i>`n    </div>`n`n</body>
+    <!-- Back to Top Button -->
+    <div id="backToTop" class="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
+</body>
 </html>
 
 
