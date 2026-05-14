@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About DSARPro - The leaders in GDPR compliance automation.">
@@ -10,6 +12,56 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @media (max-width: 480px) {
+            .about-story-container {
+                text-align: center !important;
+                gap: 2.5rem !important;
+            }
+
+            .about-story-container h2 {
+                font-size: 2.2rem !important;
+            }
+
+            .about-story-container p {
+                text-align: center !important;
+            }
+
+            .about-story-container img {
+                height: 300px !important;
+            }
+
+            .mission-segment,
+            .vision-segment {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 2rem !important;
+                margin-bottom: 6rem !important;
+            }
+
+            .mission-text,
+            .vision-text {
+                padding: 0 !important;
+                border: none !important;
+                text-align: center !important;
+                min-width: 100% !important;
+            }
+
+            .mission-text p,
+            .vision-text p {
+                font-size: 1.2rem !important;
+            }
+
+            .mission-text div,
+            .vision-text div {
+                justify-content: center !important;
+            }
+
+            .vision-segment div[style*="text-align: right"] {
+                text-align: center !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -31,10 +83,12 @@
                 <li><a href="contact.html" class="nav-item">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
                 <div class="nav-actions">
-                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i
-                            class="ri-moon-line"></i></button>
-                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i
-                            class="ri-arrow-left-right-line"></i></button>
+                    <div class="nav-actions-group">
+                        <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i
+                                class="ri-moon-line"></i></button>
+                        <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i
+                                class="ri-arrow-left-right-line"></i></button>
+                    </div>
                     <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
             </ul>
@@ -42,20 +96,21 @@
     </nav>
 
     <!-- 1. Hero Banner -->
-    <section class="page-hero" style="padding: 150px 0 80px; background: var(--bg-secondary); text-align: center;">
+    <section class="page-hero about-hero">
         <div class="container reveal">
-            <h1 style="color: var(--primary);">About DSARPro</h1>
+            <h1>About DSARPro</h1>
             <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">We are on a mission to simplify data privacy
                 and empower organizations to build trust through transparent data practices.</p>
         </div>
     </section>
 
     <!-- 2. Company Story -->
-    <section class="reveal">
-        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
+    <section class="reveal about-story-section">
+        <div class="container about-story-container"
+            style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
             <div style="flex: 1; min-width: 300px;">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
-                    alt="Our Story" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                <img src="assets/images/about1-section.png" alt="Our Story"
+                    style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; height: 400px; object-fit: cover;">
             </div>
             <div style="flex: 1; min-width: 300px;">
                 <h5 style="color: var(--secondary); text-transform: uppercase; letter-spacing: 2px;">Our Story</h5>
@@ -70,25 +125,67 @@
         </div>
     </section>
 
-    <!-- 3. Mission & Vision -->
-    <section class="reveal" style="background: var(--bg-secondary);">
-        <div class="container text-center">
-            <div class="grid-4" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="card" style="padding: 4rem 2rem;">
-                    <i class="ri-focus-2-line" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                    <h3>Our Mission</h3>
-                    <p>To provide accessible, automated, and hyper-secure tools that help global enterprises respect
-                        user privacy rights without the operational overhead.</p>
+    <!-- 3. Mission & Vision - Typographic Narrative (NO CARDS) -->
+    <section class="reveal" style="padding: 10rem 0; background: var(--bg-main); overflow: hidden;">
+        <div class="container">
+
+            <!-- Mission Segment -->
+            <div class="mission-segment"
+                style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem; margin-bottom: 12rem; position: relative;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2
+                        style="font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; line-height: 0.9; margin-bottom: 0; color: var(--text-main); letter-spacing: -3px;">
+                        Our <br>
+                        <span
+                            style="background: linear-gradient(to right, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Mission.</span>
+                    </h2>
                 </div>
-                <div class="card" style="padding: 4rem 2rem;">
-                    <i class="ri-eye-line" style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;"></i>
-                    <h3>Our Vision</h3>
-                    <p>A digital ecosystem where data privacy is implicitly guaranteed, and organizations can seamlessly
-                        demonstrate accountability and transparency.</p>
+                <div class="mission-text"
+                    style="flex: 1.5; min-width: 300px; padding-left: 3rem; border-left: 3px solid var(--primary);">
+                    <p
+                        style="font-size: 1.6rem; line-height: 1.5; color: var(--text-main); font-weight: 500; margin-bottom: 2rem;">
+                        To provide accessible, automated, and hyper-secure tools that help global enterprises respect
+                        user privacy rights without the operational overhead.
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1.5rem;">
+                        <span style="width: 50px; height: 2px; background: var(--primary);"></span>
+                        <span
+                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Core
+                            Directive</span>
+                    </div>
                 </div>
             </div>
+
+            <!-- Vision Segment -->
+            <div class="vision-segment"
+                style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem; flex-direction: row-reverse; position: relative;">
+                <div style="flex: 1; min-width: 300px; text-align: right;">
+                    <h2
+                        style="font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; line-height: 0.9; margin-bottom: 0; color: var(--text-main); letter-spacing: -3px;">
+                        Our <br>
+                        <span
+                            style="background: linear-gradient(to left, var(--secondary), #00c853); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Vision.</span>
+                    </h2>
+                </div>
+                <div class="vision-text"
+                    style="flex: 1.5; min-width: 300px; padding-right: 3rem; border-right: 3px solid var(--secondary); text-align: right;">
+                    <p
+                        style="font-size: 1.6rem; line-height: 1.5; color: var(--text-main); font-weight: 500; margin-bottom: 2rem;">
+                        A digital ecosystem where data privacy is implicitly guaranteed, and organizations can
+                        seamlessly demonstrate accountability and transparency.
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1.5rem; justify-content: flex-end;">
+                        <span
+                            style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Future
+                            Horizon</span>
+                        <span style="width: 50px; height: 2px; background: var(--secondary);"></span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
+
 
     <!-- 4. Team Members (4 cards only) -->
     <section class="reveal">
@@ -100,7 +197,7 @@
             <div class="grid-4">
                 <div class="card text-center" style="padding: 0; overflow: hidden;">
                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"
-                        alt="CEO" style="width: 100%; height: 300px; object-fit: cover;">
+                        alt="CEO" style="width: 100%; height: 350px; object-fit: cover; object-position: center;">
                     <div style="padding: 1.5rem;">
                         <h4>Michael Chang</h4>
                         <p style="color: var(--primary); font-weight: 600; margin-bottom: 0;">CEO & Co-Founder</p>
@@ -108,7 +205,7 @@
                 </div>
                 <div class="card text-center" style="padding: 0; overflow: hidden;">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
-                        alt="CTO" style="width: 100%; height: 300px; object-fit: cover;">
+                        alt="CTO" style="width: 100%; height: 350px; object-fit: cover; object-position: center;">
                     <div style="padding: 1.5rem;">
                         <h4>Sarah Jenkins</h4>
                         <p style="color: var(--primary); font-weight: 600; margin-bottom: 0;">Chief Technology Officer
@@ -117,7 +214,7 @@
                 </div>
                 <div class="card text-center" style="padding: 0; overflow: hidden;">
                     <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400"
-                        alt="CISO" style="width: 100%; height: 300px; object-fit: cover;">
+                        alt="CISO" style="width: 100%; height: 350px; object-fit: cover; object-position: center;">
                     <div style="padding: 1.5rem;">
                         <h4>David Rodriguez</h4>
                         <p style="color: var(--primary); font-weight: 600; margin-bottom: 0;">Chief Info Security
@@ -126,7 +223,7 @@
                 </div>
                 <div class="card text-center" style="padding: 0; overflow: hidden;">
                     <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400"
-                        alt="CLO" style="width: 100%; height: 300px; object-fit: cover;">
+                        alt="CLO" style="width: 100%; height: 350px; object-fit: cover; object-position: center;">
                     <div style="padding: 1.5rem;">
                         <h4>Emily Chen</h4>
                         <p style="color: var(--primary); font-weight: 600; margin-bottom: 0;">Chief Legal Officer</p>
@@ -140,27 +237,26 @@
     <section class="reveal" style="background: var(--bg-secondary);">
         <div class="container text-center">
             <h2 style="margin-bottom: 3rem;">Why Choose DSARPro?</h2>
-            <div class="grid-4" style="grid-template-columns: repeat(3, 1fr);">
-                <!-- Only 3 features shown here to break the pattern of 4 slightly, wait, requirement says "Use only EVEN NUMBER cards (4 cards only, never 3 cards)". I will change it to 4 columns! -->
-                <div class="card" style="border: none; background: transparent; box-shadow: none;">
+            <div class="grid-4">
+                <div class="card">
                     <i class="ri-shield-check-line"
                         style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
                     <h4>Uncompromised Security</h4>
                     <p>Zero-trust architecture ensuring your data is never exposed.</p>
                 </div>
-                <div class="card" style="border: none; background: transparent; box-shadow: none;">
+                <div class="card">
                     <i class="ri-speed-up-line"
                         style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
                     <h4>Lightning Fast</h4>
                     <p>Reduce response times from weeks to mere hours.</p>
                 </div>
-                <div class="card" style="border: none; background: transparent; box-shadow: none;">
+                <div class="card">
                     <i class="ri-scales-3-line"
                         style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
                     <h4>Legal Precision</h4>
                     <p>Built with input from top GDPR legal practitioners.</p>
                 </div>
-                <div class="card" style="border: none; background: transparent; box-shadow: none;">
+                <div class="card">
                     <i class="ri-customer-service-2-line"
                         style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
                     <h4>24/7 Support</h4>
@@ -181,11 +277,11 @@
                     <p>Automating data privacy and GDPR compliance for modern businesses. Protecting user data, one
                         request at a time.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                        <a href="#" class="social-icon facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon youtube"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
                 <div class="footer-widget">
@@ -223,14 +319,11 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-</body>
+    <!-- Back to Top Button -->`n    <div id="backToTop" class="back-to-top">`n        <i class="ri-arrow-up-line"></i>`n    </div>`n`n</body>
 
 </html>
-</div>
-</div>
-</footer>
 
-<script src="assets/js/main.js"></script>
-</body>
 
-</html>
+
+
+

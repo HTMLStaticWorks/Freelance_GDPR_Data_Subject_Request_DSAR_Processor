@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DSAR Automation Service Details.">
@@ -9,6 +10,31 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+            .capabilities-grid .card {
+                flex-direction: column !important;
+                text-align: center !important;
+                align-items: center !important;
+                padding: 1.5rem !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .responsive-flex-item {
+                min-width: 100% !important;
+            }
+            .services-details-grid {
+                gap: 2rem !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -29,8 +55,12 @@
                 <li><a href="contact.html" class="nav-item">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
                 <div class="nav-actions">
-                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
-                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-arrow-left-right-line"></i></button>
+                    <div class="nav-actions-group">
+                        <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i
+                                class="ri-moon-line"></i></button>
+                        <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i
+                                class="ri-arrow-left-right-line"></i></button>
+                    </div>
                     <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
             </ul>
@@ -38,27 +68,37 @@
     </nav>
 
     <!-- 1. Hero -->
-    <section class="page-hero" style="padding: 150px 0 80px; background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1920') center/cover; position: relative; color: #fff;">
-        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(11, 17, 33, 0.85);"></div>
+    <section class="page-hero service-hero" style="min-height: 400px;">
         <div class="container reveal relative" style="z-index: 1;">
-            <div style="max-width: 800px;">
+            <div style="max-width: 800px; text-align: left;">
                 <span style="background: rgba(15,98,254,0.2); color: #fff; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem; display: inline-block;">Core Service</span>
-                <h1 style="color: #fff; font-size: 3.5rem;">DSAR Automation</h1>
-                <p style="font-size: 1.2rem; color: #d1d5db; margin-bottom: 2rem;">Transform your manual compliance processes into a streamlined, secure, and fully automated workflow that handles requests from intake to fulfillment.</p>
+                <h1 id="service-title" style="color: #fff; font-size: 3.5rem;">DSAR Automation</h1>
+                <p id="service-desc" style="font-size: 1.2rem; color: #d1d5db; margin-bottom: 2rem;">Transform your manual compliance processes into a streamlined, secure, and fully automated workflow that handles requests from intake to fulfillment.</p>
                 <a href="contact.html" class="btn btn-primary">Request a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1.1 Featured Image (Below Hero) -->
+    <section class="reveal" style="padding: 4rem 0; background: var(--bg-main); position: relative; z-index: 10;">
+        <div class="container">
+            <div style="background: var(--bg-secondary); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); overflow: hidden;">
+                <img id="service-featured-image" src="assets/images/DSAR%20Automation.png" alt="Featured Service" style="width: 100%; height: auto; display: block;">
             </div>
         </div>
     </section>
 
     <!-- 2. Service Overview -->
     <section class="reveal">
-        <div class="container" style="display: flex; flex-wrap: wrap; gap: 4rem;">
-            <div style="flex: 2; min-width: 300px;">
+        <div class="container services-details-grid" style="display: flex; flex-wrap: wrap; gap: 4rem;">
+            <div class="responsive-flex-item" style="flex: 2; min-width: 300px;">
                 <h2 style="margin-bottom: 1.5rem;">Overview</h2>
-                <p>Handling Data Subject Access Requests manually is not only slow but exposes organizations to high risks of data breaches and non-compliance fines. Our DSAR Automation service connects directly to your databases, SaaS applications, and internal tools to fetch, collate, and redact personal information automatically.</p>
-                <p>By leveraging AI-powered data discovery, the platform ensures that no piece of personal data is overlooked, fulfilling requests within minutes rather than weeks.</p>
+                <div id="service-overview">
+                    <p>Handling Data Subject Access Requests manually is not only slow but exposes organizations to high risks of data breaches and non-compliance fines. Our DSAR Automation service connects directly to your databases, SaaS applications, and internal tools to fetch, collate, and redact personal information automatically.</p>
+                    <p>By leveraging AI-powered data discovery, the platform ensures that no piece of personal data is overlooked, fulfilling requests within minutes rather than weeks.</p>
+                </div>
             </div>
-            <div style="flex: 1; min-width: 300px; background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div class="responsive-flex-item" style="flex: 1; min-width: 300px; background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
                 <h4 style="margin-bottom: 1rem;">Service Benefits</h4>
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><i class="ri-checkbox-circle-fill" style="color: var(--primary);"></i> 80% Time Reduction</li>
@@ -76,7 +116,7 @@
             <div class="section-title">
                 <h2>Key Capabilities</h2>
             </div>
-            <div class="grid-4" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="grid-4 capabilities-grid">
                 <div class="card" style="display: flex; flex-direction: row; gap: 1.5rem; align-items: center;">
                     <div style="width: 60px; height: 60px; background: var(--primary-light); color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;"><i class="ri-shield-user-line"></i></div>
                     <div>
@@ -114,83 +154,40 @@
         <div class="container text-center">
             <h2 style="margin-bottom: 3rem;">How It Works</h2>
             <div class="grid-4">
-                <div class="card" style="background: transparent; border: none; box-shadow: none;">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=300" alt="Intake" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem;">
-                    <h4>1. Intake</h4>
-                    <p>User submits request via branded web portal.</p>
-                </div>
-                <div class="card" style="background: transparent; border: none; box-shadow: none;">
-                    <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&q=80&w=300" alt="Verify" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem;">
-                    <h4>2. Verify</h4>
-                    <p>System confirms identity using 2FA or document upload.</p>
-                </div>
-                <div class="card" style="background: transparent; border: none; box-shadow: none;">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=300" alt="Process" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem;">
-                    <h4>3. Process</h4>
-                    <p>AI extracts, compiles, and redacts relevant data.</p>
-                </div>
-                <div class="card" style="background: transparent; border: none; box-shadow: none;">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=300" alt="Deliver" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem;">
-                    <h4>4. Deliver</h4>
-                    <p>Encrypted report is made available to the user.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Related Services Cards (4 cards only) -->
-    <section class="reveal" style="background: var(--bg-secondary);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Explore Related Services</h2>
-            </div>
-            <div class="grid-4">
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=600" alt="Data Mapping">
+                <div class="card" style="padding: 0; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--border-color); text-align: left;">
+                    <div class="card-img-wrapper" style="margin-bottom: 0; height: 200px; border-radius: 0;">
+                        <img src="assets/images/Intake.png" alt="Intake" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
-                        <h4>Data Mapping</h4>
-                        <p>Locate and classify personal data.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="services-details.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    <div class="card-content" style="padding: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem;">1. Intake</h4>
+                        <p style="margin: 0; font-size: 0.95rem;">User submits request via branded web portal.</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?auto=format&fit=crop&q=80&w=600" alt="Consent Management">
+                <div class="card" style="padding: 0; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--border-color); text-align: left;">
+                    <div class="card-img-wrapper" style="margin-bottom: 0; height: 200px; border-radius: 0;">
+                        <img src="assets/images/Verify.png" alt="Verify" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
-                        <h4>Consent Management</h4>
-                        <p>Track user consent preferences.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="services-details.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    <div class="card-content" style="padding: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem;">2. Verify</h4>
+                        <p style="margin: 0; font-size: 0.95rem;">System confirms identity using 2FA or document upload.</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600" alt="Privacy Assessments">
+                <div class="card" style="padding: 0; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--border-color); text-align: left;">
+                    <div class="card-img-wrapper" style="margin-bottom: 0; height: 200px; border-radius: 0;">
+                        <img src="assets/images/Process.png" alt="Process" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
-                        <h4>Privacy Assessments</h4>
-                        <p>Automate DPIAs and PIAs.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="services-details.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    <div class="card-content" style="padding: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem;">3. Process</h4>
+                        <p style="margin: 0; font-size: 0.95rem;">AI extracts, compiles, and redacts relevant data.</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Breach Management">
+                <div class="card" style="padding: 0; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--border-color); text-align: left;">
+                    <div class="card-img-wrapper" style="margin-bottom: 0; height: 200px; border-radius: 0;">
+                        <img src="assets/images/Deliver.png" alt="Deliver" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
-                        <h4>Breach Management</h4>
-                        <p>Automate incident response workflow.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="services-details.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    <div class="card-content" style="padding: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem;">4. Deliver</h4>
+                        <p style="margin: 0; font-size: 0.95rem;">Encrypted report is made available to the user.</p>
                     </div>
                 </div>
             </div>
@@ -207,11 +204,11 @@
                     </a>
                     <p>Automating data privacy and GDPR compliance for modern businesses. Protecting user data, one request at a time.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                        <a href="#" class="social-icon facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon youtube"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
                 <div class="footer-widget">
@@ -247,6 +244,59 @@
         </div>
     </footer>
 
+    <script>
+        const serviceData = {
+            'dsar': {
+                title: 'DSAR Automation',
+                desc: 'Transform your manual compliance processes into a streamlined, secure, and fully automated workflow that handles requests from intake to fulfillment.',
+                image: 'assets/images/DSAR Automation.png',
+                overview: `<p>Handling Data Subject Access Requests manually is not only slow but exposes organizations to high risks of data breaches and non-compliance fines. Our DSAR Automation service connects directly to your databases, SaaS applications, and internal tools to fetch, collate, and redact personal information automatically.</p>
+                           <p>By leveraging AI-powered data discovery, the platform ensures that no piece of personal data is overlooked, fulfilling requests within minutes rather than weeks.</p>`
+            },
+            'data-mapping': {
+                title: 'Data Discovery & Mapping',
+                desc: 'Locate and classify personal data across hundreds of cloud applications and databases with precision and ease.',
+                image: 'assets/images/Data Discovery & Mapping.png',
+                overview: `<p>Understanding where your data resides is the first step in GDPR compliance. Our mapping tool provides a visual heat map of personal data across your entire organization.</p>
+                           <p>Automate the identification of PII (Personally Identifiable Information) and maintain an up-to-date Record of Processing Activities (ROPA) without manual effort.</p>`
+            },
+            'consent': {
+                title: 'Consent Management',
+                desc: 'Centralized platform to collect, track, and honor user consent preferences seamlessly across all digital channels.',
+                image: 'assets/images/Consent Management.png',
+                overview: `<p>Building trust starts with respecting user choice. Our platform provides a unified dashboard for managing preferences, from cookies to newsletter subscriptions.</p>
+                           <p>Stay compliant with GDPR, CCPA, and other global regulations by providing users with clear, accessible, and granular control over their personal data.</p>`
+            },
+            'pia': {
+                title: 'Privacy Impact Assessments',
+                desc: 'Automate DPIAs and PIAs to evaluate and mitigate privacy risks in your projects effectively and collaboratively.',
+                image: 'assets/images/Privacy Impact Assessments.png',
+                overview: `<p>Privacy by design is a legal requirement. Our assessment tool guides your team through the process of identifying and mitigating risks in new projects or technologies.</p>
+                           <p>Generate comprehensive reports for regulators and stakeholders, demonstrating your organization's commitment to accountability and transparency.</p>`
+            }
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const serviceKey = params.get('service');
+
+            if (serviceKey && serviceData[serviceKey]) {
+                const data = serviceData[serviceKey];
+                document.title = `${data.title} | DSARPro`;
+                document.getElementById('service-title').textContent = data.title;
+                document.getElementById('service-desc').textContent = data.desc;
+                document.getElementById('service-featured-image').src = data.image;
+                document.getElementById('service-overview').innerHTML = data.overview;
+            }
+        });
+    </script>
+
     <script src="assets/js/main.js"></script>
-</body>
+    <!-- Back to Top Button -->`n    <div id="backToTop" class="back-to-top">`n        <i class="ri-arrow-up-line"></i>`n    </div>`n`n</body>
 </html>
+
+
+
+
+
+

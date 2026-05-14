@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact DSARPro for privacy solutions.">
@@ -9,6 +10,26 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @media (max-width: 480px) {
+            .contact-info-responsive {
+                text-align: center !important;
+            }
+            .contact-row-responsive {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            .contact-form-responsive {
+                padding: 2rem 1.5rem !important;
+                margin-top: 2rem !important;
+                min-width: 100% !important;
+            }
+            .contact-form-responsive h3 {
+                text-align: center !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -29,8 +50,12 @@
                 <li><a href="contact.html" class="nav-item">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
                 <div class="nav-actions">
-                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
-                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-arrow-left-right-line"></i></button>
+                    <div class="nav-actions-group">
+                        <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i
+                                class="ri-moon-line"></i></button>
+                        <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i
+                                class="ri-arrow-left-right-line"></i></button>
+                    </div>
                     <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
             </ul>
@@ -51,11 +76,11 @@
         <div class="container" style="display: flex; flex-wrap: wrap; gap: 4rem;">
             
             <!-- 2. Contact Information -->
-            <div style="flex: 1; min-width: 300px;">
+            <div class="contact-info-responsive" style="flex: 1; min-width: 300px;">
                 <h3 style="margin-bottom: 2rem;">Contact Information</h3>
                 <p style="margin-bottom: 2rem;">We are a remote-first company with headquarters in London and offices in New York and Berlin.</p>
                 
-                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem;">
+                <div class="contact-row-responsive" style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem;">
                     <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"><i class="ri-map-pin-line"></i></div>
                     <div>
                         <h4 style="margin-bottom: 0.2rem;">Headquarters</h4>
@@ -63,7 +88,7 @@
                     </div>
                 </div>
                 
-                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem;">
+                <div class="contact-row-responsive" style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem;">
                     <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"><i class="ri-phone-line"></i></div>
                     <div>
                         <h4 style="margin-bottom: 0.2rem;">Phone</h4>
@@ -71,17 +96,28 @@
                     </div>
                 </div>
                 
-                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div class="contact-row-responsive" style="display: flex; gap: 1rem; align-items: flex-start;">
                     <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"><i class="ri-mail-send-line"></i></div>
                     <div>
                         <h4 style="margin-bottom: 0.2rem;">Email</h4>
                         <p style="margin: 0; color: var(--text-muted);">sales@dsarpro.com<br>support@dsarpro.com</p>
                     </div>
                 </div>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <h4 style="margin-bottom: 1rem;">Connect With Us</h4>
+                    <div class="social-links" style="justify-content: center;">
+                        <a href="#" class="social-icon facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon youtube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
             </div>
 
             <!-- 3. Contact Form -->
-            <div style="flex: 1.5; min-width: 300px; background: var(--card-bg); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+            <div class="contact-form-responsive" style="flex: 1.5; min-width: 300px; background: var(--card-bg); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
                 <h3 style="margin-bottom: 2rem;">Send us a message</h3>
                 <form>
                     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
@@ -119,16 +155,14 @@
         </div>
     </section>
 
-    <!-- 5. Social Media CTA -->
-    <section class="reveal" style="background: var(--bg-secondary); text-align: center;">
+    <!-- 5. Schedule CTA -->
+    <section class="reveal" style="background: var(--gradient-primary); color: #fff; text-align: center; padding: 6rem 0;">
         <div class="container">
-            <h2 style="margin-bottom: 1rem;">Connect With Us</h2>
-            <p style="margin-bottom: 2rem;">Follow our social channels for the latest privacy news and product updates.</p>
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="#" class="btn btn-outline" style="border-radius: 30px;"><i class="ri-linkedin-fill"></i> LinkedIn</a>
-                <a href="#" class="btn btn-outline" style="border-radius: 30px;"><i class="ri-twitter-x-line"></i> Twitter</a>
-                <a href="#" class="btn btn-outline" style="border-radius: 30px;"><i class="ri-youtube-fill"></i> YouTube</a>
-                <a href="#" class="btn btn-outline" style="border-radius: 30px;"><i class="ri-github-fill"></i> GitHub</a>
+            <h2 style="color: #fff; margin-bottom: 1.5rem; font-size: 2.8rem;">Ready to Automate Your Compliance?</h2>
+            <p style="color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto 3rem; font-size: 1.2rem;">Schedule a 15-minute personalized demo with our privacy experts to see how DSARPro can transform your workflow.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="pricing.html" class="btn" style="background: #fff; color: var(--primary); padding: 1rem 2.5rem;">View Pricing Plans</a>
+                <a href="#" class="btn" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 1rem 2.5rem; backdrop-filter: blur(10px);">Schedule a Demo</a>
             </div>
         </div>
     </section>
@@ -143,11 +177,11 @@
                     </a>
                     <p>Automating data privacy and GDPR compliance for modern businesses.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                        <a href="#" class="social-icon facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon youtube"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
                 <div class="footer-widget">
@@ -184,5 +218,11 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-</body>
+    <!-- Back to Top Button -->`n    <div id="backToTop" class="back-to-top">`n        <i class="ri-arrow-up-line"></i>`n    </div>`n`n</body>
 </html>
+
+
+
+
+
+

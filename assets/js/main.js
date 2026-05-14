@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Active Nav Link Highlighting
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll(".nav-item");
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if(href === currentPath || (currentPath === "index.html" && href === "./")) {
+            link.classList.add("active");
+        }
+    });
+
     // Theme Toggle (Dark / Light)
     const themeBtn = document.getElementById("theme-btn");
     const currentTheme = localStorage.getItem("theme");
@@ -114,4 +124,30 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     }
+
+    // Back to Top Button Logic
+    let backToTopBtn = document.getElementById("backToTop");
+    
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement("div");
+        backToTopBtn.id = "backToTop";
+        backToTopBtn.className = "back-to-top";
+        backToTopBtn.innerHTML = '<i class="ri-arrow-up-line"></i>';
+        document.body.appendChild(backToTopBtn);
+    }
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add("active");
+        } else {
+            backToTopBtn.classList.remove("active");
+        }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 });

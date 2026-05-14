@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Register to DSARPro">
@@ -15,19 +16,8 @@
             min-height: 100vh;
             width: 100%;
         }
-        .auth-left {
+        .auth-center {
             flex: 1;
-            background: linear-gradient(135deg, #131c31, #0b1121);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-        .auth-right {
-            flex: 1.2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -35,32 +25,64 @@
             background: var(--bg-main);
             position: relative;
         }
+
         .auth-form-wrapper {
             width: 100%;
             max-width: 500px;
         }
         .auth-brand {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--primary);
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
+            margin-bottom: 2rem;
+            text-decoration: none;
+        }
+        .auth-card {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg);
         }
         .theme-toggle-fixed {
             position: absolute;
             top: 2rem;
-            left: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
         }
-        @media (max-width: 768px) {
-            .auth-left { display: none; }
-            .auth-brand { left: 2rem; right: auto; }
-            .theme-toggle-fixed { right: 2rem; left: auto; }
+
+        @media (max-width: 480px) {
+            .auth-center {
+                flex-direction: column;
+                padding: 2rem 1.5rem;
+                justify-content: center;
+            }
+            .theme-toggle-fixed {
+                position: static;
+                width: 100%;
+                max-width: 500px;
+                justify-content: flex-end;
+                margin-bottom: 1rem;
+            }
+            .auth-card {
+                padding: 2rem 1.5rem;
+            }
         }
-        
+
+        @media (max-width: 360px) {
+            .auth-center {
+                padding: 1.5rem 1rem;
+            }
+            .auth-card {
+                padding: 2rem 1rem;
+            }
+        }
+
         /* Password Strength */
         .strength-meter {
             height: 4px;
@@ -79,25 +101,17 @@
 <body>
 
     <div class="auth-container">
-        <!-- Left Side: Illustration -->
-        <div class="auth-left">
-            <div style="position: relative; z-index: 1; max-width: 500px; text-align: center;">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Start Compliance" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); margin-bottom: 2rem; filter: brightness(0.8);">
-                <h2>Join DSARPro Today</h2>
-                <p style="color: rgba(255,255,255,0.8);">Automate compliance, discover hidden data, and build trust with your customers.</p>
-            </div>
-        </div>
-
-        <!-- Right Side: Form -->
-        <div class="auth-right">
-            <a href="index.html" class="auth-brand"><i class="ri-shield-keyhole-fill"></i> DSARPro</a>
+        <!-- Main Content -->
+        <div class="auth-center">
             <div class="theme-toggle-fixed">
                 <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
+                <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-arrow-left-right-line"></i></button>
             </div>
             
-            <div class="auth-form-wrapper reveal">
-                <h2 style="margin-bottom: 0.5rem;">Create your account</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Start your 14-day free trial. No credit card required.</p>
+            <div class="auth-form-wrapper reveal auth-card">
+                <a href="index.html" class="auth-brand"><i class="ri-shield-keyhole-fill"></i> DSARPro</a>
+                <h2 style="margin-bottom: 0.5rem; text-align: center;">Create your account</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2.5rem; text-align: center;">Start your 14-day free trial. No credit card required.</p>
                 
                 <form id="register-form" action="dashboard.html">
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -115,14 +129,24 @@
                         <input type="email" class="form-control" placeholder="name@company.com" required>
                     </div>
                     <div class="form-group">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Company Name</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-                    <div class="form-group">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Password</label>
-                        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                        <div style="position: relative;">
+                            <input type="password" id="password" class="form-control" placeholder="••••••••" required style="padding-right: 3rem;">
+                            <button type="button" class="toggle-password" data-target="password" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 0; display: flex; align-items: center; z-index: 10;">
+                                <i class="ri-eye-line eye-icon"></i>
+                            </button>
+                        </div>
                         <div class="strength-meter"><div id="strength-bar" class="strength-bar"></div></div>
                         <p id="strength-text" style="font-size: 0.8rem; margin-top: 0.3rem; color: var(--text-muted);">Use 8+ characters with a mix of letters, numbers & symbols</p>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Confirm Password</label>
+                        <div style="position: relative;">
+                            <input type="password" id="confirm-password" class="form-control" placeholder="••••••••" required style="padding-right: 3rem;">
+                            <button type="button" class="toggle-password" data-target="confirm-password" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 0; display: flex; align-items: center; z-index: 10;">
+                                <i class="ri-eye-line eye-icon"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="form-group" style="display: flex; align-items: flex-start; gap: 0.5rem;">
                         <input type="checkbox" id="terms" required style="margin-top: 0.3rem;">
@@ -168,8 +192,34 @@
 
         document.getElementById('register-form').addEventListener('submit', function(e) {
             e.preventDefault();
+            const passwordValue = password.value;
+            const confirmPasswordValue = document.getElementById('confirm-password').value;
+            
+            if (passwordValue !== confirmPasswordValue) {
+                alert("Passwords do not match!");
+                return;
+            }
+            
             window.location.href = 'dashboard.html';
         });
+
+        // Password Toggle Logic
+        document.querySelectorAll('.toggle-password').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const input = document.getElementById(targetId);
+                const icon = this.querySelector('.eye-icon');
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+                icon.className = type === 'password' ? 'ri-eye-line eye-icon' : 'ri-eye-off-line eye-icon';
+            });
+        });
     </script>
-</body>
+    <!-- Back to Top Button -->`n    <div id="backToTop" class="back-to-top">`n        <i class="ri-arrow-up-line"></i>`n    </div>`n`n</body>
 </html>
+
+
+
+
+
+

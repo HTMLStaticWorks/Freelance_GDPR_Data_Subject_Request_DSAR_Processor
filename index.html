@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Freelance GDPR Data Subject Request (DSAR) Processor - Manage and automate DSAR workflows securely.">
@@ -37,12 +38,14 @@
                 
                 <!-- Navbar Actions for Mobile included in menu -->
                 <div class="nav-actions">
-                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode">
-                        <i class="ri-moon-line"></i>
-                    </button>
-                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL">
-                        <i class="ri-arrow-left-right-line"></i>
-                    </button>
+                    <div class="nav-actions-group">
+                        <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode">
+                            <i class="ri-moon-line"></i>
+                        </button>
+                        <button id="rtl-btn" class="icon-btn" title="Toggle RTL">
+                            <i class="ri-arrow-left-right-line"></i>
+                        </button>
+                    </div>
                     <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
             </ul>
@@ -72,7 +75,156 @@
             background-position: center;
             animation: backgroundMove 20s ease-in-out infinite;
         }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .hero-content h1 {
+            color: #fff;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: #f3f4f6;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .hero-btns .btn {
+            padding: 1rem 2.5rem;
+        }
+        .hero-btns .btn-outline {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+        @media (max-width: 360px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Secure Automation Section */
+        .secure-automation-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+        }
+        .secure-automation-img {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+        .secure-automation-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        @media (max-width: 1024px) {
+            .secure-automation-container {
+                gap: 2rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .secure-automation-img, .secure-automation-content {
+                min-width: 100%;
+            }
+            .secure-automation-img {
+                margin-bottom: 2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .secure-automation-img {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+
+        /* Privacy Design Section */
+        .privacy-design-container {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            flex-wrap: wrap;
+        }
+        .privacy-design-content {
+            flex: 1.2;
+            min-width: 350px;
+        }
+        .privacy-design-scene {
+            flex: 1;
+            min-width: 300px;
+            height: 500px;
+            position: relative;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .privacy-design-container {
+                gap: 3rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .privacy-design-content, .privacy-design-scene {
+                min-width: 100%;
+            }
+            .privacy-design-content {
+                margin-bottom: 3rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .privacy-design-scene {
+                height: 400px;
+            }
+            .floating-3d-scene {
+                transform: scale(0.7);
+            }
+            .privacy-design-content {
+                min-width: unset;
+                width: 100%;
+            }
+            .privacy-design-content h2 {
+                font-size: 2.2rem;
+            }
+        }
     </style>
+
+
+
+
 
     <!-- 1. Hero Section -->
     <section class="hero-section" style="height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; text-align: center; color: white;">
@@ -80,15 +232,16 @@
             <div class="hero-bg-image"></div>
         </div>
         <div class="container">
-            <div class="hero-content reveal" style="max-width: 800px; margin: 0 auto;">
-                <h1 style="color: #fff; font-size: 4rem; margin-bottom: 1.5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">Automate GDPR Data Subject Requests</h1>
-                <p style="font-size: 1.25rem; margin-bottom: 2.5rem; color: #f3f4f6;">Streamline your DSAR workflows, ensure privacy compliance, and protect customer data with our secure automation platform.</p>
-                <div style="display: flex; gap: 1.5rem; justify-content: center;">
-                    <a href="services.html" class="btn btn-primary" style="padding: 1rem 2.5rem;">Discover Features</a>
-                    <a href="contact.html" class="btn btn-outline" style="padding: 1rem 2.5rem; border-color: #fff; color: #fff;">Request Demo</a>
+            <div class="hero-content reveal">
+                <h1>Automate GDPR Data Subject Requests</h1>
+                <p>Streamline your DSAR workflows, ensure privacy compliance, and protect customer data with our secure automation platform.</p>
+                <div class="hero-btns">
+                    <a href="services.html" class="btn btn-primary">Discover Features</a>
+                    <a href="contact.html" class="btn btn-outline">Request Demo</a>
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- 2. Trusted Companies / Clients Section -->
@@ -225,11 +378,12 @@
 
     <!-- 5. Secure Automation Section -->
     <section class="secure-automation reveal" style="background: #0b1121; color: #fff;">
-        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
-            <div style="flex: 1; min-width: 300px;">
+        <div class="container secure-automation-container">
+            <div class="secure-automation-img">
                 <img src="assets/images/Enterprise-Grade Security Architecture.png" alt="Enterprise Security Architecture" style="border-radius: var(--radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.5); width: 100%; height: auto; object-fit: cover;">
             </div>
-            <div style="flex: 1; min-width: 300px;">
+            <div class="secure-automation-content">
+
                 <h2 style="color: #fff; margin-bottom: 1.5rem;">Enterprise-Grade Security Architecture</h2>
                 <p style="color: #9ca3af; margin-bottom: 2rem;">Our platform is built with privacy-by-design principles, ensuring your sensitive DSAR operations are protected against modern cyber threats.</p>
                 <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
@@ -250,8 +404,8 @@
 
     <!-- 6. Privacy by Design - 3D Interactive Section (New Layout) -->
     <section class="privacy-design reveal" style="padding: 100px 0; background: var(--bg-main); overflow: hidden;">
-        <div class="container" style="display: flex; align-items: center; gap: 5rem; flex-wrap: wrap;">
-            <div style="flex: 1.2; min-width: 350px;">
+        <div class="container privacy-design-container">
+            <div class="privacy-design-content">
                 <p style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1.5rem;">The Architecture</p>
                 <h2 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem;">Privacy by Design <span style="color: var(--primary);">Built In</span></h2>
                 <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem;">Our zero-knowledge architecture ensures that even we cannot access your data. We provide the infrastructure, you keep the keys. It's not just a feature; it's our DNA.</p>
@@ -278,9 +432,10 @@
                 </div>
             </div>
 
-            <div style="flex: 1; min-width: 300px; height: 500px; position: relative; perspective: 1000px; display: flex; justify-content: center; align-items: center;">
+            <div class="privacy-design-scene">
                 <!-- 3D Floating Elements (Not Cards) -->
                 <div class="floating-3d-scene" style="width: 100%; height: 100%; transform-style: preserve-3d; animation: sceneRotate 15s infinite linear;">
+
                     <!-- Core Shield -->
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(50px); width: 200px; height: 200px; background: var(--gradient-primary); border-radius: 40px; box-shadow: 0 30px 60px rgba(15, 98, 254, 0.4); display: flex; align-items: center; justify-content: center; border: 4px solid rgba(255,255,255,0.2);">
                         <i class="ri-shield-user-fill" style="font-size: 6rem; color: white;"></i>
@@ -381,12 +536,12 @@
                         <i class="ri-shield-keyhole-fill"></i> DSARPro
                     </a>
                     <p>Automating data privacy and GDPR compliance for modern businesses. Protecting user data, one request at a time.</p>
-                    <div class="footer-socials" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-facebook-fill"></i></a>
-                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-twitter-x-fill"></i></a>
-                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-instagram-line"></i></a>
-                        <a href="#" class="social-link" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: var(--transition);"><i class="ri-youtube-fill"></i></a>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-link twitter"><i class="ri-twitter-x-fill"></i></a>
+                        <a href="#" class="social-link linkedin"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-link instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-link youtube"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
                 <div class="footer-widget">
@@ -422,7 +577,17 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div id="backToTop" class="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+

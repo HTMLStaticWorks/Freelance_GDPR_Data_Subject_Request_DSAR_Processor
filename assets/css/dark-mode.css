@@ -39,3 +39,11 @@ body.dark-mode .btn-outline:hover {
     background: var(--primary-light);
     color: #fff;
 }
+body.dark-mode .social-icon, body.dark-mode .social-link {
+    background: var(--bg-secondary);
+}
+
+body.dark-mode .social-icon:hover, body.dark-mode .social-link:hover {
+    background: var(--primary);
+    color: #fff !important;
+}

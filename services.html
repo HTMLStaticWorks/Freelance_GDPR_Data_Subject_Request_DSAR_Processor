@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DSAR Services - Comprehensive GDPR compliance solutions.">
@@ -9,6 +10,26 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @media (max-width: 480px) {
+            .responsive-flex-item {
+                min-width: 100% !important;
+            }
+            .services-grid-container {
+                gap: 2rem !important;
+            }
+            .cta-btn-responsive {
+                padding: 0.8rem 1.2rem !important;
+                font-size: 1rem !important;
+                white-space: normal !important;
+                max-width: 100% !important;
+                display: flex !important;
+                margin: 0 auto !important;
+                width: fit-content !important;
+                text-align: center !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -29,8 +50,12 @@
                 <li><a href="contact.html" class="nav-item">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
                 <div class="nav-actions">
-                    <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
-                    <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i class="ri-arrow-left-right-line"></i></button>
+                    <div class="nav-actions-group">
+                        <button id="theme-btn" class="icon-btn" title="Toggle Dark Mode"><i
+                                class="ri-moon-line"></i></button>
+                        <button id="rtl-btn" class="icon-btn" title="Toggle RTL"><i
+                                class="ri-arrow-left-right-line"></i></button>
+                    </div>
                     <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
             </ul>
@@ -38,9 +63,9 @@
     </nav>
 
     <!-- 1. Hero -->
-    <section class="page-hero" style="padding: 150px 0 80px; background: linear-gradient(to right, var(--bg-secondary), var(--bg-main));">
+    <section class="page-hero service-hero">
         <div class="container reveal text-center">
-            <h1 style="color: var(--primary);">Our Privacy Services</h1>
+            <h1>Our Privacy Services</h1>
             <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">End-to-end solutions for managing data subject rights, ensuring compliance, and building customer trust.</p>
         </div>
     </section>
@@ -49,52 +74,52 @@
     <section class="reveal">
         <div class="container">
             <div class="grid-4">
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600" alt="DSAR Automation">
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <div class="card-img-wrapper" style="margin-bottom: 0; height: 240px; border-radius: 0;">
+                        <img src="assets/images/DSAR%20Automation.png" alt="DSAR Automation" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="padding: 1.5rem;">
                         <h4>DSAR Automation</h4>
                         <p>Fully automate the intake, verification, and fulfillment of Data Subject Access Requests.</p>
                     </div>
-                    <div class="card-footer">
-                        <a href="services-details.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    <div class="card-footer" style="padding: 0 1.5rem 1.5rem;">
+                        <a href="services-details.html?service=dsar" class="btn btn-primary" style="width: 100%;">View Details</a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=600" alt="Data Mapping">
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <div class="card-img-wrapper" style="margin-bottom: 0; height: 240px; border-radius: 0;">
+                        <img src="assets/images/Data%20Discovery%20&%20Mapping.png" alt="Data Mapping" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="padding: 1.5rem;">
                         <h4>Data Discovery & Mapping</h4>
                         <p>Locate and classify personal data across hundreds of cloud applications and databases.</p>
                     </div>
-                    <div class="card-footer">
-                        <a href="services-details.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    <div class="card-footer" style="padding: 0 1.5rem 1.5rem;">
+                        <a href="services-details.html?service=data-mapping" class="btn btn-primary" style="width: 100%;">View Details</a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?auto=format&fit=crop&q=80&w=600" alt="Consent Management">
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <div class="card-img-wrapper" style="margin-bottom: 0; height: 240px; border-radius: 0;">
+                        <img src="assets/images/Consent%20Management.png" alt="Consent Management" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="padding: 1.5rem;">
                         <h4>Consent Management</h4>
                         <p>Centralized platform to collect, track, and honor user consent preferences seamlessly.</p>
                     </div>
-                    <div class="card-footer">
-                        <a href="services-details.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    <div class="card-footer" style="padding: 0 1.5rem 1.5rem;">
+                        <a href="services-details.html?service=consent" class="btn btn-primary" style="width: 100%;">View Details</a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600" alt="Privacy Assessments">
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <div class="card-img-wrapper" style="margin-bottom: 0; height: 240px; border-radius: 0;">
+                        <img src="assets/images/Privacy%20Impact%20Assessments.png" alt="Privacy Assessments" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="padding: 1.5rem;">
                         <h4>Privacy Impact Assessments</h4>
                         <p>Automate DPIAs and PIAs to evaluate and mitigate privacy risks in your projects.</p>
                     </div>
-                    <div class="card-footer">
-                        <a href="services-details.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    <div class="card-footer" style="padding: 0 1.5rem 1.5rem;">
+                        <a href="services-details.html?service=pia" class="btn btn-primary" style="width: 100%;">View Details</a>
                     </div>
                 </div>
             </div>
@@ -103,8 +128,8 @@
 
     <!-- 3. GDPR Compliance Solutions -->
     <section class="reveal" style="background: var(--bg-secondary);">
-        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
-            <div style="flex: 1; min-width: 300px; order: 2;">
+        <div class="container services-grid-container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
+            <div class="responsive-flex-item" style="flex: 1; min-width: 300px; order: 2;">
                 <h2>Comprehensive GDPR Compliance</h2>
                 <p>We provide tools that cover every article of the General Data Protection Regulation, translating legal jargon into technical reality.</p>
                 <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
@@ -114,8 +139,8 @@
                     <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;"><i class="ri-check-line" style="color: var(--secondary); background: rgba(0,230,118,0.1); padding: 5px; border-radius: 50%;"></i> Article 30: Records of Processing</li>
                 </ul>
             </div>
-            <div style="flex: 1; min-width: 300px; order: 1;">
-                <img src="https://images.unsplash.com/photo-1507925922893-ec9f1cb2ce47?auto=format&fit=crop&q=80&w=800" alt="GDPR Compliance" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            <div class="responsive-flex-item" style="flex: 1; min-width: 300px; order: 1; display: flex; justify-content: center;">
+                <img src="assets/images/Comprehensive%20GDPR%20Compliance.png" alt="GDPR Compliance" class="animate-3d" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); max-width: 100%; height: auto;">
             </div>
         </div>
     </section>
@@ -174,7 +199,7 @@
         <div class="container">
             <h2 style="color: #fff; margin-bottom: 1.5rem;">Ready to Modernize Your Privacy Ops?</h2>
             <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 2rem;">Talk to our privacy engineers to see how our services can fit into your compliance strategy.</p>
-            <a href="contact.html" class="btn" style="background: #fff; color: var(--primary); padding: 1rem 2.5rem; font-size: 1.1rem;">Schedule a Consultation</a>
+            <a href="contact.html" class="btn cta-btn-responsive" style="background: #fff; color: var(--primary); padding: 1rem 2.5rem; font-size: 1.1rem;">Schedule a Consultation</a>
         </div>
     </section>
 
@@ -188,11 +213,11 @@
                     </a>
                     <p>Automating data privacy and GDPR compliance for modern businesses. Protecting user data, one request at a time.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
-                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                        <a href="#" class="social-icon facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="social-icon youtube"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
                 <div class="footer-widget">
@@ -229,5 +254,11 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-</body>
+    <!-- Back to Top Button -->`n    <div id="backToTop" class="back-to-top">`n        <i class="ri-arrow-up-line"></i>`n    </div>`n`n</body>
 </html>
+
+
+
+
+
+
