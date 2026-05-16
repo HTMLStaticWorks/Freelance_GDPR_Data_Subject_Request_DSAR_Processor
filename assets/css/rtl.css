@@ -4,16 +4,25 @@
     text-align: right;
 }
 
+/* Ensure navbar components follow natural RTL flow */
+/* Removing flex-direction: row-reverse allows the browser's automatic 
+   RTL mirroring to place the nav-menu (actions/links) on the left 
+   and the nav-brand on the right, as requested. */
+
 [dir="rtl"] .nav-brand {
-    flex-direction: row-reverse;
+    /* Icon and text will automatically mirror: Icon on the right, Text on the left */
+    flex-direction: row; 
 }
 
 [dir="rtl"] .nav-menu {
-    flex-direction: row-reverse;
+    /* Links and actions will automatically mirror: Actions (Login/Icons) on the far left, 
+       links starting from the right side of the menu block. */
+    flex-direction: row;
 }
 
 [dir="rtl"] .btn {
-    flex-direction: row-reverse;
+    /* Allow icons inside buttons to mirror naturally */
+    flex-direction: row;
 }
 
 [dir="rtl"] .footer-links a:hover {
@@ -25,12 +34,33 @@
     text-align: center;
 }
 
-@media (max-width: 768px) {
+/* Mobile Responsive RTL Adjustments */
+@media (max-width: 1024px) {
     [dir="rtl"] .nav-menu {
+        /* On mobile, keep the menu sliding from the right */
         left: auto;
         right: -100%;
+        /* Place actions (Login, Theme, RTL) at the top of the mobile menu */
+        flex-direction: column-reverse;
     }
+    
     [dir="rtl"] .nav-menu.active {
         right: 0;
     }
+
+    [dir="rtl"] .nav-actions {
+        /* Adjust border for reversed column order */
+        border-top: none;
+        border-bottom: 1px solid var(--border-color);
+        margin-top: 0;
+        margin-bottom: 2rem;
+        padding-top: 0;
+        padding-bottom: 2rem;
+    }
+}
+
+/* Back to Top Position */
+[dir="rtl"] .back-to-top {
+    right: auto;
+    left: 30px;
 }
