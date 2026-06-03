@@ -86,35 +86,34 @@
             transform: rotateY(180deg);
         }
 
-        /* Section 3: Isometric Roadmap */
+        /* Section 3: Straight Roadmap */
         .isometric-container {
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 2rem;
             padding: 4rem 0;
-            transform: rotateX(30deg) rotateZ(-15deg);
-            transform-style: preserve-3d;
+            flex-wrap: wrap;
         }
 
         .iso-step {
             width: 200px;
             height: 200px;
             background: var(--card-bg);
-            margin: 0 -20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             border-radius: 20px;
-            box-shadow: 20px 20px 40px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
             border: 1px solid var(--border-color);
             position: relative;
-            transform: translateZ(0);
         }
 
         .iso-step:hover {
-            transform: translateZ(50px) scale(1.1);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
             background: var(--primary);
             color: white;
         }
@@ -124,33 +123,23 @@
             margin-bottom: 1rem;
         }
 
-        /* Section 4: 3D Rotating Cylinder (Logos) */
+        /* Section 4: Straight Logo Grid */
         .logo-cylinder {
-            height: 400px;
-            position: relative;
-            perspective: 1200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 5rem; /* Moved down slightly */
+            margin-top: 3rem;
+            width: 100%;
         }
 
         .cylinder-inner {
+            display: grid;
+            grid-template-columns: repeat(3, 180px);
+            justify-content: center;
+            gap: 2rem;
             width: 100%;
-            height: 100%;
-            position: absolute;
-            transform-style: preserve-3d;
-            animation: rotateCylinder 20s linear infinite;
-        }
-
-        @keyframes rotateCylinder {
-            from { transform: rotateY(0deg); }
-            to { transform: rotateY(360deg); }
+            margin: 0 auto;
         }
 
         .logo-item {
-            position: absolute;
-            width: 150px;
+            width: 180px;
             height: 100px;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -159,19 +148,13 @@
             justify-content: center;
             align-items: center;
             box-shadow: var(--shadow-sm);
-            backface-visibility: visible;
+            transition: var(--transition);
         }
 
-        /* Positioning logo items in a circle */
-        .logo-item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
-        .logo-item:nth-child(2) { transform: rotateY(60deg) translateZ(300px); }
-        .logo-item:nth-child(3) { transform: rotateY(120deg) translateZ(300px); }
-        .logo-item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
-        .logo-item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
-        .logo-item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }
-
-        .cylinder-inner:hover {
-            animation-play-state: paused;
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
         }
 
         /* General Portfolio Fixes */
@@ -303,16 +286,16 @@
     <section class="page-hero portfolio-hero">
         <div class="container" style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
             <div class="hero-text reveal" style="flex: 1; min-width: 300px; text-align: left;">
-                <h1>Showcasing Privacy Excellence</h1>
-                <p>Explore our track record of automating DSAR workflows for global enterprises. We turn compliance challenges into competitive advantages.</p>
+                <h1>My Freelance Portfolio</h1>
+                <p>Explore my track record of automating DSAR workflows as an independent specialist. I turn compliance challenges into competitive advantages.</p>
                 <a href="#projects" class="btn btn-primary">View Case Studies</a>
             </div>
             <div class="hero-visual reveal" style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; height: 400px;">
                 <div class="floating-3d-card text-center">
                     <i class="ri-shield-check-line" style="font-size: 4rem; color: var(--secondary);"></i>
-                    <h3 style="color: #fff;">Enterprise Security</h3>
-                    <p style="color: #cbd5e1;">99.9% Automation Rate</p>
-                    <div style="margin-top: 1rem; height: 5px; background: rgba(255,255,255,0.1); border-radius: 5px;">
+                    <h3 style="color: var(--text-main); margin-bottom: 0.5rem;">Enterprise Security</h3>
+                    <p style="color: var(--text-muted) !important;">99.9% Automation Rate</p>
+                    <div style="margin-top: 1rem; height: 5px; background: var(--border-color); border-radius: 5px;">
                         <div style="width: 90%; height: 100%; background: var(--secondary); border-radius: 5px;"></div>
                     </div>
                 </div>
@@ -324,8 +307,8 @@
     <section id="projects" class="reveal">
         <div class="container">
             <div class="section-title">
-                <h2>Successful Implementations</h2>
-                <p>Hover over each project to see the impact we made.</p>
+                <h2>My Freelance Projects</h2>
+                <p>Hover over each project to see the impact I made.</p>
             </div>
             <div class="grid-4" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
                 <!-- Project 1 -->
@@ -408,8 +391,8 @@
     <section class="roadmap-section reveal" style="background: var(--bg-secondary); overflow: hidden;">
         <div class="container">
             <div class="section-title">
-                <h2>Our Deployment Journey</h2>
-                <p>How we take your organization from manual to automated in 4 steps.</p>
+                <h2>My Deployment Journey</h2>
+                <p>How I take your organization from manual to automated in 4 steps.</p>
             </div>
             <div class="isometric-container">
                 <div class="iso-step">
@@ -436,8 +419,8 @@
     <section class="clients-3d reveal">
         <div class="container">
             <div class="section-title">
-                <h2>Trusted Partners</h2>
-                <p>Join the growing list of privacy-conscious organizations.</p>
+                <h2>Clients I've Helped</h2>
+                <p>Join the growing list of privacy-conscious clients I've worked with.</p>
             </div>
             <div class="logo-cylinder">
                 <div class="cylinder-inner">
@@ -469,7 +452,7 @@
                     <!-- Floating Quote Box -->
                     <div class="spotlight-quote" style="position: absolute; bottom: 40px; right: -40px; background: #fff; color: #000; padding: 2.5rem; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); max-width: 300px; z-index: 2; border-left: 6px solid var(--primary);">
                         <i class="ri-double-quotes-r" style="font-size: 2.5rem; color: var(--primary); position: absolute; top: -15px; left: 20px; opacity: 0.2;"></i>
-                        <p style="font-size: 1rem; line-height: 1.6; font-style: italic; color: #334155; margin-bottom: 1.5rem;">"The most seamless GDPR implementation we've ever experienced. Truly enterprise-ready."</p>
+                        <p style="font-size: 1rem; line-height: 1.6; font-style: italic; color: #334155; margin-bottom: 1.5rem;">"The most seamless GDPR implementation I've ever experienced. Truly enterprise-ready."</p>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <div style="width: 30px; height: 2px; background: var(--primary);"></div>
                             <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #1e293b;">CTO, TechCorp</span>
@@ -484,7 +467,7 @@
                         Revolutionizing <br>
                         <span style="background: linear-gradient(to right, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Global Privacy.</span>
                     </h2>
-                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 3rem;">For a Fortune 500 retail group, we migrated 12 million legacy records into a fully automated DSAR portal, reducing response times from 30 days to under 12 hours.</p>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 3rem;">For a Fortune 500 retail group, I migrated 12 million legacy records into a fully automated DSAR portal, reducing response times from 30 days to under 12 hours.</p>
                     
                     <div class="spotlight-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
                         <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
@@ -524,7 +507,7 @@
                 <div class="footer-widget">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">About Me</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
